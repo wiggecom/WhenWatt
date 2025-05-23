@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1600"
+   height="800"
+   viewBox="0 0 423.33333 211.66666"
+   version="1.1"
+   id="svg6993"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="spin_long_front.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview6995"
+     pagecolor="#5b5b5b"
+     bordercolor="#fffa97"
+     borderopacity="0.98431373"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#404040"
+     inkscape:document-units="mm"
+     showgrid="false"
+     showguides="true"
+     shape-rendering="crispEdges"
+     inkscape:clip-to-page="false"
+     inkscape:zoom="0.3436097"
+     inkscape:cx="953.11628"
+     inkscape:cy="164.43075"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     inkscape:window-x="1672"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer2" />
+  <defs
+     id="defs6990">
+    <linearGradient
+       id="linearGradient171-2">
+      <stop
+         style="stop-color:#808080;stop-opacity:1;"
+         offset="0"
+         id="stop184" />
+      <stop
+         style="stop-color:#b3b3b3;stop-opacity:1;"
+         offset="1"
+         id="stop185" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient171-1">
+      <stop
+         style="stop-color:#808080;stop-opacity:1;"
+         offset="0"
+         id="stop179" />
+      <stop
+         style="stop-color:#4c4c4c;stop-opacity:1;"
+         offset="0.25"
+         id="stop180" />
+      <stop
+         style="stop-color:#4c4c4c;stop-opacity:1;"
+         offset="0.75092936"
+         id="stop181" />
+      <stop
+         style="stop-color:#666666;stop-opacity:1;"
+         offset="1"
+         id="stop182" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient171">
+      <stop
+         style="stop-color:#666666;stop-opacity:1;"
+         offset="0"
+         id="stop174" />
+      <stop
+         style="stop-color:#4c4c4c;stop-opacity:1;"
+         offset="0.24907064"
+         id="stop175" />
+      <stop
+         style="stop-color:#4c4c4c;stop-opacity:1;"
+         offset="0.75"
+         id="stop176" />
+      <stop
+         style="stop-color:#7f7f7f;stop-opacity:1;"
+         offset="1"
+         id="stop177" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient171-3">
+      <stop
+         style="stop-color:#b3b3b3;stop-opacity:1;"
+         offset="0"
+         id="stop173" />
+      <stop
+         style="stop-color:#808080;stop-opacity:1;"
+         offset="1"
+         id="stop171" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient171-2"
+       id="linearGradient203"
+       gradientUnits="userSpaceOnUse"
+       x1="211.66667"
+       y1="42.333332"
+       x2="317.5"
+       y2="89.958336"
+       gradientTransform="translate(-105.83334)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient171-3"
+       id="linearGradient204"
+       gradientUnits="userSpaceOnUse"
+       x1="317.5"
+       y1="121.70833"
+       x2="423.33334"
+       y2="169.33333"
+       gradientTransform="translate(-105.83334)" />
+  </defs>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="SpinnerLong">
+    <path
+       d="m 105.83333,10.583333 v 0 c 33.07294,0 66.14599,58.208543 105.83333,111.124997 V 89.958333 c -39.68734,-52.916451 -72.76056,-79.375 -105.83333,-79.375 z"
+       style="display:inline;fill:url(#linearGradient203);stroke-width:0.499999"
+       id="path202"
+       inkscape:label="y3"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       d="m 317.49999,201.08333 c -33.07289,0 -66.14599,-58.20854 -105.83333,-111.124997 v 31.749997 c 39.68734,52.91647 72.76044,79.375 105.83333,79.375 z"
+       style="display:inline;fill:url(#linearGradient204);stroke-width:0.499999"
+       id="path203"
+       inkscape:label="y4"
+       sodipodi:nodetypes="ccccc" />
+  </g>
+</svg>

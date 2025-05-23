@@ -1,0 +1,747 @@
+:root{
+    --stars_far: 140;
+    --stars_mid: 100;
+    --stars_near: 60;
+    --stars_fade1: 12.33;
+    --stars_fade2: 15.12;
+    --spin_speedy: 15;
+}
+
+.nav-bg {
+    background-color: rgb(var(--bgplaincolor));
+    background: linear-gradient(5deg, rgba(var(--navfirstcolor),1) 0%, rgba(var(--navsecondcolor),1) 100%);
+}
+
+.floating-base {
+    background: linear-gradient(-15deg, rgba(var(--black),1) 0%, rgba(var(--goldycolor),0.3) 50%, rgba(var(--black),1) 100%);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+
+.floating-bg {
+    background-color: rgba(255,128,192,0.8);
+    background: linear-gradient(15deg, rgba(var(--navsecondcolor),1) 0%, rgba(var(--goldycolor),0.1) 50%, rgba(var(--navfirstcolor),1) 100%);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    animation-name: floatingfx;
+    animation-duration: 7.2s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    transition-timing-function: ease-in-out;
+    font-weight: 1000;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+@keyframes floatingfx{
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.floating-bg-layer {
+    
+    background-color: rgba(255,128,192,0.8);
+    background: linear-gradient(-150deg, transparent 0%, rgb(0, 181, 103, 0.50) 50%, transparent 100%);
+    /*background: linear-gradient(-150deg, transparent 0%, rgb(0, 181, 103, 0.50) 50%, transparent 100%);*/
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    animation-name: floatinglayer;
+    animation-duration: 10.5s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    transition-timing-function: ease-in-out;
+    height: 100%;
+    width: 100%;
+    z-index: 15;
+}
+
+@keyframes floatinglayer {
+    0% {
+        opacity: 0.2;
+    }
+
+    22% {
+        opacity: 0.6;
+    }
+
+    51% {
+        opacity: 0;
+        
+    }
+
+    100% {
+        opacity: 0.2;
+    }
+}
+
+.footer-bg-container {
+    background: linear-gradient(85deg, rgba(var(--navfirstcolor),1) 0%, rgba(var(--navsecondcolor),1) 100%);
+    z-index: 1;
+}
+
+.pattern {
+    display: block;
+    background-image: url(../images/pattern4.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: fixed;
+    top: -75%;
+    left: -75%;
+    height: 250%;
+    width: 250%;
+    z-index: 21;
+    -webkit-animation: patternmotion linear infinite;
+    -webkit-animation-duration: 90s;
+    animation: patternmotion linear infinite;
+    animation-duration: 90s;
+}
+
+@keyframes patternmotion {
+    0% {
+        /* opacity: 0.8; */
+        rotate: 0deg;
+    }
+    /* 30% {
+        opacity: 0.9;
+    }
+    60% {
+        opacity: 0.9;
+    } */
+    100% {
+        /* opacity: 0.8; */
+        rotate: 360deg;
+    }
+}
+
+/*  -------------- STARS START --------------- */
+/*.stars-bg-base,*/ 
+.stars-bg-fade1, .stars-bg-fade2{
+    display: block;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+.stars-bg-fade1, .stars-bg-fade2{
+    -webkit-animation: starbgfade linear infinite;
+    animation: starbgfade linear infinite;
+}
+
+/* .stars-bg-base{
+    background-image: url(../images/stars_bg1.svg);
+    opacity: 0.7;
+    z-index: 1;
+} */
+
+.stars-bg-fade1{
+    background-image: url(../images/stars_bg2.svg);
+    -webkit-animation-duration: calc(var(--stars_fade1) * 1s);
+    animation-duration: calc(var(--stars_fade1) * 1s);
+    z-index: 22;
+}
+
+.stars-bg-fade2{
+    background-image: url(../images/stars_bg3.svg);
+    -webkit-animation-duration: calc(var(--stars_fade2) * 1s);
+    animation-duration: calc(var(--stars_fade2) * 1s);
+    z-index: 23;
+}
+
+@keyframes starbgfade {
+    0%, 100% {
+        opacity: 0.1;
+    }
+    25% {
+        opacity: 0.9;
+    }
+    50% {
+        opacity: 0.4;
+    }
+    75% {
+        opacity: 0.7;
+    }
+}
+
+.stars_near, .stars_near_loop, .stars_far, .stars_far_loop, .stars_whereveryouare, .stars_whereveryouare_loop {
+    display: block;
+    background-position: center center;
+    background-repeat: repeat;
+    background-size:cover;
+    background-position-x: 200%;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    height:100vh;
+    width:200%;
+    z-index: 25;
+    -webkit-animation: stars_parallax linear infinite;
+    animation: stars_parallax linear infinite;
+    overflow: hidden;
+}
+
+.stars_near {
+    background-image: url(../images/stars_near.svg);
+    -webkit-animation-duration: calc(var(--stars_near) * 1s);
+    -webkit-animation-delay: calc(var(--stars_near) * -0.5 * 1s);
+    animation-duration: calc(var(--stars_near) * 1s);
+    animation-delay: calc(var(--stars_near) * -0.5 * 1s);
+}
+
+.stars_near_loop {
+    background-image: url(../images/stars_near.svg);
+    -webkit-animation-duration: calc(var(--stars_near) * 1s);
+    animation-duration: calc(var(--stars_near) * 1s);
+}
+
+.stars_far {
+    opacity: 0.4;
+    background-image: url(../images/stars_far.svg);
+    -webkit-animation-duration: calc(var(--stars_far) * 1s);
+    -webkit-animation-delay: calc(var(--stars_far) * -0.5 * 1s);
+    animation-duration: calc(var(--stars_far) * 1s);
+    animation-delay: calc(var(--stars_far) * -0.5 * 1s);
+}
+
+.stars_far_loop {
+    opacity: 0.4;
+    background-image: url(../images/stars_far.svg);
+    -webkit-animation-duration: calc(var(--stars_far) * 1s);
+    animation-duration: calc(var(--stars_far) * 1s);
+}
+
+.stars_whereveryouare {
+    opacity: 0.7;
+    background-image: url(../images/stars_mid.svg);
+    -webkit-animation-duration: calc(var(--stars_mid) * 1s);
+    -webkit-animation-delay: calc(var(--stars_mid) * -0.5 * 1s);
+    animation-duration: calc(var(--stars_mid) * 1s);
+    animation-delay: calc(var(--stars_mid) * -0.5 * 1s);
+}
+
+.stars_whereveryouare_loop {
+    opacity: 0.7;
+    background-image: url(../images/stars_mid.svg);
+    -webkit-animation-duration: calc(var(--stars_mid) * 1s);
+    animation-duration: calc(var(--stars_mid) * 1s);
+}
+
+@keyframes stars_parallax {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/*  -------------- STARS END --------------- */
+
+/*  -------------- LONG SPIN ---------------*/
+
+.longspin_f, .longspin_f_loop, .longspin_b, .longspin_b_loop, .longspin_f2, .longspin_f2_loop, .longspin_b2, .longspin_b2_loop {
+    display: block;
+    background-position: center center;
+    background-repeat: repeat-x;
+    background-size: 100%;
+    background-position-x: 100%;
+    background-position-y: 20px;
+    object-fit: cover;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:1600px;
+    min-width: 1600px;
+    -webkit-animation: spinloop linear infinite;
+    animation: spinloop linear infinite;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.longspin_f, .longspin_f_loop, .longspin_f2, .longspin_f2_loop {
+    background-image: url(../images/spin_long_front.svg);
+    -webkit-animation-duration: calc(var(--spin_speedy) * 1s);
+    animation-duration: calc(var(--spin_speedy) * 1s);
+    z-index: 110000;
+}
+
+.longspin_f {
+    -webkit-animation-delay: calc(var(--spin_speedy) * -0.5 * 1s);
+    animation-delay: calc(var(--spin_speedy) * -0.5 * 1s);
+}
+
+.longspin_f2 {
+    -webkit-animation-delay: calc(var(--spin_speedy) * -0.35 * 1s);
+    animation-delay: calc(var(--spin_speedy) * -0.35 * 1s);
+}
+
+.longspin_f2_loop {
+    -webkit-animation-delay: calc(var(--spin_speedy) * -0.85 * 1s);
+    animation-delay: calc(var(--spin_speedy) * -0.85 * 1s);
+}
+
+.longspin_b, .longspin_b_loop, .longspin_b2, .longspin_b2_loop {
+    background-image: url(../images/spin_long_back.svg);
+    -webkit-animation-duration: calc(var(--spin_speedy) * 1s);
+    animation-duration: calc(var(--spin_speedy) * 1s);
+    z-index: 5;
+    opacity: 0.5;
+}
+
+.longspin_b {
+    -webkit-animation-delay: calc(var(--spin_speedy) * -0.5 * 1s);
+    animation-delay: calc(var(--spin_speedy) * -0.5 * 1s);
+}
+
+.longspin_b2 {
+    -webkit-animation-delay: calc(var(--spin_speedy) * -0.35 * 1s);
+    animation-delay: calc(var(--spin_speedy) * -0.35 * 1s);
+}
+
+.longspin_b2_loop {
+    -webkit-animation-delay: calc(var(--spin_speedy) * -0.85 * 1s);
+    animation-delay: calc(var(--spin_speedy) * -0.85 * 1s);
+}
+
+@keyframes spinloop {
+    0% {
+        transform: translateX(1600px);
+    }
+    100% {
+        transform: translateX(-1600px);
+    }
+}
+
+/*  -------------- BUUGENG START --------------- */
+.imagebg{
+    display: block;
+    background-image: url('../images/GreenCopperBG.webp');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+}
+
+.buugeng_1 {
+    display: block;
+    background-image: url(../images/buugeng.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size:contain;
+    position: fixed;
+    top: -20%;
+    left: -20%;
+    height: 140%;
+    width: 140%;
+    z-index: 21;
+    -webkit-animation: buu1 linear infinite;
+    -webkit-animation-duration: 10s;
+    animation: buu1 linear infinite;
+    animation-duration: 15s;
+}
+
+@keyframes buu1 {
+    0% {
+        opacity: 0.5;
+        rotate: 0deg;
+        transform: translateX(100px);
+    }
+    50%{
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 0.5;
+        rotate: 360deg;
+        transform: translateX(100px);
+    }
+}
+
+.buugeng_2 {
+    display: block;
+    background-image: url(../images/buugeng.svg);
+    background-position: center center;
+    background-repeat:no-repeat;
+    background-size:contain;
+    position: fixed;
+    top: -20%;
+    left: -20%;
+    height: 140%;
+    width: 140%;
+    z-index: 21;
+    -webkit-animation: buu2 linear infinite;
+    -webkit-animation-duration: 7s;
+    animation: buu2 linear infinite;
+    animation-duration: 10.5s;
+    transform: scaleX(-100%);
+}
+@keyframes buu2 {
+    0% {
+        opacity: 0.5;
+        rotate: 180deg;
+    }
+    100% {
+        opacity: 0.5;
+        rotate: -180deg;
+    }
+}
+/*  -------------- BUUGENG END --------------- */
+
+/*  -------------- INTERFERENCE START --------------- */
+.interference_one {
+    background-image: url(../images/megacircle2.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: fixed;
+    top: -75%;
+    left: -75%;
+    height: 250%;
+    width: 250%;
+    z-index: 20;
+    opacity: 0.4;
+    -webkit-animation: interferenceone 10.25s linear infinite;
+    animation: interferenceone 10.25s linear infinite;
+    
+}
+
+@keyframes interferenceone {
+    0% {
+        rotate: 0deg;
+        transform: translateX(-10%);
+        transform: translateY(10%);
+    }
+    50%{
+        transform: translateX(10%);
+        transform: translateY(0%);
+    }
+    100% {
+        rotate: -360deg;
+        transform: translateX(-10%);
+        transform: translateY(10%);
+    }
+}
+
+.interference_two {
+    background-image: url(../images/megacircle2.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: fixed;
+    top: -75%;
+    left: -75%;
+    height: 250%;
+    width: 250%;
+    z-index: 19;
+    opacity: 0.4;
+    -webkit-animation: interferencetwo 6.12s linear infinite;
+    animation: interferencetwo 6.12s linear infinite;
+    
+}
+
+@keyframes interferencetwo {
+    0% {
+        transform: translateX(10%);
+        transform: translateY(-10%);
+        rotate: 0deg;
+    }
+    50%{
+        transform: translateX(0%);
+        transform: translateY(10%);
+    }
+    100% {
+        transform: translateX(10%);
+        transform: translateY(-10%);
+        rotate: 360deg;
+    }
+}
+/*  -------------- INTERFERENCE END--------------- */
+
+.wave_1, .wave_2, .wave_3 {
+    display: block;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+}
+
+.wave_1 {
+    background-image: url(../images/wavex3_1.svg);
+    z-index: 21;
+}
+
+.wave_2 {
+    background-image: url(../images/wavex3_2.svg);
+    z-index: 22;
+}
+
+.wave_3 {
+    background-image: url(../images/wavex3_3.svg);
+    z-index: 23;
+}
+
+/* ---------------- SunnyMountains Background ----------------- */
+.bg-trees_base {
+    display: block;
+    background-image: url(../images/mountains.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    opacity: 0.3;
+    z-index: 20;
+}
+
+.bg-trees_sun {
+    display: block;
+    background-image: url(../images/trees_sun_v3.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    animation-name: sun;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    transition-timing-function: ease-in-out;
+    z-index: 25;
+}
+
+    @keyframes sun{
+        0%, 100% {
+            opacity: 0.2;
+        }
+        15% {
+            opacity: 0.6;
+        }
+        35% {
+            opacity: 0.3;
+        }
+        45% {
+            opacity: 0.5;
+        }
+        55% {
+            opacity: 0.8;
+        }
+        70% {
+            opacity: 0.9;
+        }
+        90% {
+            opacity: 0.5;
+        }
+    }
+
+.bg-trees_left {
+    display: block;
+    background-image: url(../images/trees_left.svg);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    opacity: 1.0;
+    z-index: 26;
+}
+
+.bg-trees_right {
+    display: block;
+    background-image: url(../images/trees_right.svg);
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    position: fixed;
+    top: 0%;
+    right: 0%;
+    height: 100%;
+    width: 100%;
+    opacity: 1.0;
+    z-index: 27;
+
+}
+
+@media screen and (max-width: 900px) {
+    .bg-trees_right {
+      display: none !important;
+      visibility: hidden;
+      position: relative;
+    }
+  }
+
+@media screen and (max-width: 600px) {
+.bg-trees_left {
+    display: none !important;
+    visibility: hidden;
+    position: relative;
+}
+}
+/* ---------------- SunnyMountains Background END ------------- */
+/* ------------------ Vaporware ------------------ */
+.vaporware_sun {
+    display: block;
+    background-image: url(../images/vaporware_sunfx.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    animation-name: vaporsun;
+    animation-duration: 25.3s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    transition-timing-function: linear;
+    transition: all;
+    z-index: 25;
+}
+
+    @keyframes vaporsun{
+        0%, 100% {
+            opacity: 0.0;
+            transform: scale(1);
+        }
+        20% {
+            opacity: 0.6;
+            transform: scale(1.1);
+        }
+        30% {
+            opacity: 0.2;
+            transform: scale(1);
+        }
+        40% {
+            opacity: 0.7;
+            transform: scale(1.1);
+        }
+        50% {
+            opacity: 0.3;
+            transform: scale(1);
+        }
+        75% {
+            opacity: 0.9;
+            transform: scale(1.1);
+        }
+    }
+
+.vaporware_grid {
+    display: block;
+    background-image: url(../images/vaporware_gridbar.svg);
+    mask-image: url(../images/vaporware_sunset_lines_mask.webp);
+    mask-size: cover;
+    mask-position: center center;
+    mask-repeat: no-repeat;
+    mask-origin: initial;
+    background-position-y: -200%;
+    background-position-x: 0%;
+    background-repeat: no-repeat;
+    background-size:cover;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    animation-name: vaporgrid;
+    animation-duration: 18.4s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    transition-timing-function: linear;
+    z-index: 25;
+}
+
+    @keyframes vaporgrid{
+        0% {
+            background-position-y: 200%;
+            opacity: 0%;
+        }
+        50% {
+            background-position-y: 400%;
+            opacity: 100%;
+        }
+        80%{
+            opacity: 100%;
+        }
+        100% {
+            background-position-y: -400%;
+            opacity: 0%;
+        }
+    }
+
+
+.main-bg {
+    background-color: rgb(var(--bgplaincolor)); /* fallback color */
+    background: linear-gradient(135deg, rgba(var(--bgfirstcolor),1) 0%, rgba(var(--bgsecondcolor),1) 100%);
+}
+
+.bgblack{
+    background-color: rgb(0,0,0);
+}
+
+.bgimage{
+        display: block;
+        background-color: rgb(0,0,0);
+        /*background-image: url();*/
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size:cover;
+        position: fixed;
+        top: 0%;
+        left: 0%;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        overflow-y: scroll;
+        overflow-x: hidden;
+}
+
+.glass{
+    backdrop-filter: blur(8px);
+}

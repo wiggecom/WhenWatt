@@ -1,0 +1,38 @@
+/* Variables for CSS */
+:root {
+    --bgplaincolor: 10, 0, 24;
+    --bgfirstcolor: 0, 66, 66;
+    --bgsecondcolor: 66, 0, 66;
+    --navfirstcolor: 0, 99, 99;
+    --navsecondcolor: 99, 0, 99;
+    --bgfadecolor: 0, 0, 0;
+    --hotpink: 255, 0, 128;
+    --bubblegumpink: 255, 128, 192;
+    --electricblue: 128, 223, 255;
+    --goldycolor: 255, 172, 0;
+    --lemonyellow: 213, 254, 44;
+    --darkxmas: 167, 5, 0;
+    --black: 0, 0, 0;
+    --card: 50, 50, 50;
+    --menucard: 27, 75, 72;
+    --orangeburst: 250, 136, 43;
+
+    --great: 100, 255, 100;
+    --good: 110, 210, 180;
+    --ok: 225, 200, 80;
+    --caution: 255, 125, 60;
+    --warning: 255, 85, 85;
+    --warning2: 255, 105, 105;
+
+    --fxbuttontext: 21, 212, 200;
+    --fxbuttontexthover: 115, 255, 246;
+    --fxbuttonbase: 14, 145, 136;
+
+    --headline: 115, 255, 246;
+
+    --cost: 213, 254, 44;
+}
+
+.sample{
+    color: rgb(115, 255, 246);
+}

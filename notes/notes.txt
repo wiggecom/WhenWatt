@@ -1,0 +1,12 @@
+make toggle buttons
+set localstorage bool
+savebutton runs function
+function gets data and stringifies
+save as json in cookie
+on writemenu, read cookie, if empty set default values
+make prices clickable to see prices on useage matched
+
+
+Todo: Keyboard Access, high contrast theme
+
+Overlays?

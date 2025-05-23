@@ -1,0 +1,351 @@
+/* FONTS */
+@font-face {
+    font-family: 'artbrush';
+    src: url('../fonts/artbrush.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'augusta';
+    src: url('../fonts/augusta.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'avignon';
+    src: url('../fonts/avignon.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'avignon-bi';
+    src: url('../fonts/avignon-bi.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'bangers';
+    src: url('../fonts/bangers.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'becker';
+    src: url('../fonts/becker.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'brasspounder';
+    src: url('../fonts/brassp.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'chopin';
+    src: url('../fonts/chopinscript.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'devinneswash';
+    src: url('../fonts/devinneswash.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'kaufmann';
+    src: url('../fonts/kaufmann.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'neoneon';
+    src: url('../fonts/neoneon.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'oraqle';
+    src: url('../fonts/oraqlescript.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'pristina';
+    src: url('../fonts/pristina.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'rage';
+    src: url('../fonts/rage.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'thebrownwall';
+    src: url('../fonts/thebrownwall.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'vanchrome';
+    src: url('../fonts/vanchrome_outline.woff2') format('woff2');
+}
+
+/* --------- FONT SAMPLES --------------------- */
+
+.ff-artbrush {
+    font-family: 'artbrush';
+}
+
+.ff-augusta {
+    font-family: 'augusta';
+}
+
+.ff-avignon {
+    font-family: 'avignon';
+ }
+
+ .ff-avignon-bi {
+    font-family: 'avignon-bi';
+ }
+
+.ff-bangers {
+    font-family: 'bangers';
+}    
+
+.ff-becker {
+    font-family: 'becker';
+}    
+
+.ff-brasspounder {
+    font-family: 'brasspounder';
+}    
+
+.ff-chopin {
+    font-family: 'chopin';
+}    
+
+.ff-devinneswash {
+    font-family: 'devinneswash';
+}    
+
+.ff-kaufmann {
+    font-family: 'kaufmann';
+}    
+
+.ff-neoneon {
+    font-family: 'neoneon';
+}    
+
+.ff-oraqle {
+    font-family: 'oraqle';
+}    
+
+.ff-pristina {
+    font-family: 'pristina';
+}    
+
+.ff-rage {
+    font-family: 'rage';
+}    
+
+.ff-thebrownwall {
+    font-family: 'thebrownwall';
+}    
+
+.ff-vanchrome {
+    font-family: 'vanchrome';
+}    
+
+
+/*  --  Colors -- */
+.t-headline {
+    color: rgba(0,0,0,0) !important;
+    -webkit-text-stroke-color: rgba(var(--headline),0.7) !important;
+    -webkit-text-stroke-width: 2px !important;
+    text-shadow: rgba(var(--headline),0.5) 0px 0px 25px, rgba(var(--headline),0.8) 0px 0px 20px !important;
+}
+
+.t-goldy {
+    color: rgba(var(--goldycolor),1) !important; 
+    text-shadow: rgba(105, 30, 0, 1.0) 0px 0px 15px !important; 
+}
+
+.t-cost {
+    color: rgba(var(--cost),1) !important;
+    text-shadow: rgba(0,0,0,0.9) 5px 5px 5px !important;
+}
+
+.t-lemony {
+    color: rgba(var(--lemonyellow),1) !important;
+    text-shadow: rgba(202, 108, 0, 0.9) 0px 0px 25px !important;
+}
+
+.t-orangeburst {
+    color: rgba(var(--orangeburst),1) !important;
+    text-shadow: rgba(0,0,0,0.9) 5px 5px 5px !important;
+}
+
+.t-pinky {
+    color: rgba(var(--bubblegumpink),1) !important;
+    text-shadow: rgba(255,128,192,0.9) 0px 0px 25px !important;
+}
+
+.t-darkxmas {
+    color: rgba(var(--darkxmas),1) !important;
+    text-shadow: rgba(255,128,192,0.9) 0px 0px 25px !important;
+}
+
+.t-neonpink {
+    color: rgb(var(--hotpink)) !important;
+    -webkit-text-stroke-color: rgba(255,255,255,0.2) !important;
+    -webkit-text-stroke-width: 3px !important;
+    text-shadow: rgba(255,128,192,1) 0px 0px 35px, rgba(255,128,192,1) 0px 0px 20px, rgba(255,160,215,1) 0px 0px 10px !important;
+}
+
+.t-neontubepink {
+    color: rgba(0,0,0,0) !important;
+    -webkit-text-stroke-color: rgba(255,200,215,0.7) !important;
+    -webkit-text-stroke-width: 2px !important;
+    text-shadow: rgba(255,128,192,1) 0px 0px 25px, rgba(255,128,192,1) 0px 0px 15px, rgba(255,160,215,1) 0px 0px 10px !important;
+}
+
+.t-neontubeblue {
+    color: rgba(0,0,0,0) !important;
+    -webkit-text-stroke-color: rgba(200,200,255,0.7) !important;
+    -webkit-text-stroke-width: 2px !important;
+    text-shadow: rgba(100,100,255,1) 0px 0px 25px, rgba(100,100,255,1) 0px 0px 15px, rgba(100,100,255,1) 0px 0px 10px !important;
+}
+
+.t-neongreen {
+    color: rgb(200,255,200) !important;
+    text-shadow: rgba(31,200,95,1) 0px 0px 25px, rgba(31,200,95,1) 0px 0px 15px, rgba(100,250,100,1) 0px 0px 10px !important;
+}
+
+.t-neonyellow {
+    color: rgb(255,255,200) !important;
+    text-shadow: rgba(200,200,100,1) 0px 0px 25px, rgba(200,200,100,1) 0px 0px 15px, rgba(250,250,100,1) 0px 0px 10px !important;
+}
+
+
+.t-gld {
+    color: rgb(var(--goldycolor)) !important;
+    text-shadow: rgba(0,0,0,0.7) 7px 3px 7px !important;
+}
+
+
+/*  -- Plot Colors--  */
+.t-great {
+    color: rgb(var(--great)) !important;
+    text-shadow: rgba(0,0,0,0.7) 7px 3px 7px !important;
+}
+
+.t-good {
+    color: rgb(var(--good)) !important;
+    text-shadow: rgba(0,0,0,0.7) 7px 3px 7px !important;
+}
+
+.t-ok {
+    color: rgb(var(--ok)) !important;
+    text-shadow: rgba(0,0,0,0.7) 7px 3px 7px !important;
+}
+
+.t-caution {
+    color: rgb(var(--caution)) !important;
+    text-shadow: rgba(0,0,0,0.7) 7px 3px 7px !important;
+}
+
+.t-warning {
+    color: rgb(var(--warning)) !important;
+    text-shadow: rgba(0,0,0,0.7) 7px 3px 7px !important;
+}
+
+.t-warning_2 {
+    color: rgb(var(--warning)) !important;
+    text-shadow:rgba(0,0,0,0.7) 7px 3px 7px !important;
+    border: 2px solid rgba(var(--warning),0.8);
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+/* --  Sizes  -- */
+
+.f-h1{
+    font-size: clamp(1.2em, 3em, 3em);
+    font-weight: 1000; 
+    /* font-weight sets font from thin to fat, 500 is normal, 0 is thin, 1000 is fat */
+}
+
+.f-h2{
+    font-size: clamp(1rem, -0.875rem + 8.333vw, 2.5rem);
+    font-weight: 900; 
+    /* font-weight sets font from thin to fat, 500 is normal, 0 is thin, 1000 is fat */
+}
+
+.f-h3{
+    font-size: clamp(1em, 2em, 2em);
+    font-weight: 800; 
+    /* font-weight sets font from thin to fat, 500 is normal, 0 is thin, 1000 is fat */
+}
+
+.f-h4{
+    font-size: 1.5em;
+    font-weight: 800; 
+    /* font-weight sets font from thin to fat, 500 is normal, 0 is thin, 1000 is fat */
+}
+
+.f-h5{
+    font-size: 1.2em;
+    font-weight: 1000; 
+    /* font-weight sets font from thin to fat, 500 is normal, 0 is thin, 1000 is fat */
+}
+
+.f-h6{
+    font-size: 1em;
+    font-weight: 1000; 
+    /* font-weight sets font from thin to fat, 500 is normal, 0 is thin, 1000 is fat */
+}
+
+.f-h7{
+    font-size: 0.9em;
+    font-weight: 1000; 
+    /* font-weight sets font from thin to fat, 500 is normal, 0 is thin, 1000 is fat */
+}
+
+.f-p {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.f-clock{
+    font-size: clamp(1.2em, 5em, 6em);
+    font-weight: 1000; 
+    /* font-weight sets font from thin to fat, 500 is normal, 0 is thin, 1000 is fat */
+}
+
+/*  --  Style -- */
+
+.fs-ita {
+    font-style: italic;
+}
+
+.fs-spc2 {
+    letter-spacing: 2px;
+}
+
+.fs-spc3 {
+    letter-spacing: 3px;
+}
+
+.fs-spc4 {
+    letter-spacing: 4px;
+}
+
+.fs-spc5 {
+    letter-spacing: 5px;
+}
+
+.t-center{
+    text-align: center;
+}
+
+.fw1000{
+    font-weight: 1000;
+}
+
+.pricetable{
+    line-height: 1.5;
+}
+
+.linebreak{
+    line-break: auto !important;
+    white-space: normal !important;
+}
