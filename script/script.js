@@ -211,12 +211,7 @@ your mileage may vary`;
 Coming soon!
 Settings for your personal
 fees that gets added on top
-of the spot price.
-
-Fun stuff: This is currently
-over 1200 lines css and 
-600 lines javascript, jeez!
-The entire project is 3.87 MB`;
+of the spot price.`;
         }
 
         else if (id == 'displaymenu'){
