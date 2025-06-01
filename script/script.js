@@ -231,7 +231,7 @@ in Information-panel`;
     function getQuote(idtag){
         const fontstyle = 'ff-brasspounder';
         const fontsize = 'f-h3';
-        const fontcolor = 't-neontubeblue';
+        const fontcolor = 't-neongreen';
         const qfontstyle = 'ff-pristina';
         const qfontsize = 'f-h2';
         const qfontcolor = 't-lemony';
@@ -316,7 +316,7 @@ in Information-panel`;
     }
 
     function writeInfo(currentPrice, fontstyle, dailyAverage){
-        const headlinefont = 'ff-pristina';
+        const headlinefont = 'ff-devinneswash';
         const fontsize = 'f-h3';
         const headlinecolor = 't-ok';
         const fontcolor = 't-orangeburst';
