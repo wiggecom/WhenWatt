@@ -142,12 +142,15 @@
         if (isThisDay){
             idtag = 'today';
             const today = getFormattedDate(); // Today's date
-            apiUrl = `https://www.elprisetjustnu.se/api/v1/prices/${today.year}/${today.month}-${today.day}_SE3.json`;
+            // whenwattapi.azurewebsites.net/GetPublic?date=2025-06-04
+            apiUrl = `https://whenwattapi.azurewebsites.net/GetPublic?date=${today.year}-${today.month}-${today.day}`;
+            //apiUrl = `https://www.elprisetjustnu.se/api/v1/prices/${today.year}/${today.month}-${today.day}_SE3.json`;
         }
         else {
             idtag = 'tomorrow';
             const tomorrow = getFormattedDate(1); // Tomorrow's date
-            apiUrl = `https://www.elprisetjustnu.se/api/v1/prices/${tomorrow.year}/${tomorrow.month}-${tomorrow.day}_SE3.json`;
+            apiUrl = `https://whenwattapi.azurewebsites.net/GetPublic?date=${tomorrow.year}-${tomorrow.month}-${tomorrow.day}`;
+            //apiUrl = `https://www.elprisetjustnu.se/api/v1/prices/${tomorrow.year}/${tomorrow.month}-${tomorrow.day}_SE3.json`;
         }
         const d = new Date();
         let thisHour = d.getHours();
