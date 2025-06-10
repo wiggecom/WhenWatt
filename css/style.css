@@ -2,6 +2,11 @@
     border: solid red 1px;
 } */
 
+*{
+    cursor: default;
+    user-select: none;
+}
+
 .scrollinside{
     overflow:scroll;
 }

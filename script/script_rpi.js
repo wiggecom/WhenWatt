@@ -199,14 +199,12 @@
     function writeMenu(id){
         const fontstyle = 'ff-pristina';
         const fontsize = 'f-h4';
-        const fontcolor = 't-lemony';
+        const fontcolor = 'pi-lemony';
         let message = ``;
 
         const menu = document.getElementById(id);
         if (id == 'fxmenu'){
-            message = `
-Some themes are very demanding, 
-your mileage may vary`;
+            message = ``;
         }
         
         else if (id == 'configmenu'){
@@ -234,13 +232,13 @@ in Information-panel`;
     function getQuote(idtag){
         const fontstyle = 'ff-brasspounder';
         const fontsize = 'f-h3';
-        const fontcolor = 't-neongreen';
+        const fontcolor = 'pi-neongreen';
         const qfontstyle = 'ff-pristina';
         const qfontsize = 'f-h2';
-        const qfontcolor = 't-lemony';
+        const qfontcolor = 'pi-lemony';
         const i = "<i><br/>";
         const ie = "</i>";
-        const authStart = '<span class="t-goldy"><br/>';
+        const authStart = '<span class="pi-goldy"><br/>';
         const authEnd = '</span>';
         const quotes = [
             `${i}\"You have come a long way to find, what you really left behind\"${ie} ${authStart} - Megadeth${authEnd}`, // 0
@@ -279,22 +277,22 @@ in Information-panel`;
         let fontcolor = '';
         const sekFloat = parseFloat(_sekKwh).toFixed(3);
         if (sekFloat <= 0.3){
-            fontcolor = 't-great'
+            fontcolor = 'pi-great'
         }
         else if (sekFloat > 0.3 && sekFloat <= 0.6){
-            fontcolor = 't-good'
+            fontcolor = 'pi-good'
         }
         else if (sekFloat > 0.6 && sekFloat <= 1.0){
-            fontcolor = 't-ok'
+            fontcolor = 'pi-ok'
         }
         else if (sekFloat > 1.0 && sekFloat <= 1.8){
-            fontcolor = 't-caution'
+            fontcolor = 'pi-caution'
         }
         else if (sekFloat > 1.8 && sekFloat <= 2.5){
-            fontcolor = 't-warning'
+            fontcolor = 'pi-warning'
         }
         else if (sekFloat > 2.5){
-            fontcolor = 't-warning_2'
+            fontcolor = 'pi-warning_2'
         }
 
         const reald = new Date();
@@ -321,8 +319,8 @@ in Information-panel`;
     function writeInfo(currentPrice, fontstyle, dailyAverage){
         const headlinefont = 'ff-devinneswash';
         const fontsize = 'f-h3';
-        const headlinecolor = 't-ok';
-        const fontcolor = 't-orangeburst';
+        const headlinecolor = 'pi-ok';
+        const fontcolor = 'pi-orangeburst';
         const kWm = currentPrice / 60;
         const sectionCare = true;
         const sectionHeating = true;
@@ -475,7 +473,7 @@ in Information-panel`;
         const fontsize = 'f-h7';
         const cost = currentPrice * kwhused;
         const dailyCost = kwhused * dailyAverage * 24;
-        const priceHLStart = '<span class="t-cost">';
+        const priceHLStart = '<span class="pi-cost">';
         const priceHLEnd = '</span>';
         let priceInfo  = ''; 
         if(title.includes('24h')){
@@ -544,6 +542,8 @@ in Information-panel`;
 
     function swapfx(fxname_in){
         const divId = 'bgfx';
+        let wallpaperCookie = '';
+        let wallpaper_opacity_value = '';
         let fxname = fxname_in;
         const fxId = document.getElementById('bgfx');
         if (fxname == null || fxname == ''){
@@ -606,7 +606,7 @@ in Information-panel`;
             'wave_3'
         ],
         buugeng: [
-            // 'imagebg',
+            'imagebg',
             'buugeng_1',
             'buugeng_2'
         ],
@@ -634,8 +634,10 @@ in Information-panel`;
                 createDiv(item, divId);
             })
         };
-        const wallpaperCookie = getCookieByName('wallpaper');
-        const wallpaper_opacity_value = parseFloat(getCookieByName('wallpaper_opacity'));
+
+        wallpaperCookie = getCookieByName('wallpaper');
+        wallpaper_opacity_value = parseFloat(getCookieByName('wallpaper_opacity'));
+
         wallpapermod(wallpaperCookie, false, wallpaper_opacity_value);
     }
 

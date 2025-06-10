@@ -31,12 +31,11 @@
                 <br />
                 <div class="f-h2 t-headline ff-brasspounder mb15">Themes</div><br />
                 <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('starfield'); wallpapermod('stars_bg1.svg', true, 1.0);">Starfield</div>
-                <!-- <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('starfieldheavy');  wallpapermod('stars_bg1.svg', true, 1.0);">Starfield (heavy)</div> -->
                 <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('mountains'); wallpapermod('mountains.webp', true, 0.3);">Mountains</div>
                 <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('circles'); wallpapermod('', true, 1.0);">Circles</div>
                 <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('longspin'); wallpapermod('stars_bg1.svg', true, 0.7);">Spin</div>
                 <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('wave'); wallpapermod('', true, 1.0);">Wave</div>
-                <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('buugeng'); wallpapermod('GreenCopperBG.webp', true, 1.0);">Buugeng</div>
+                <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('buugeng'); wallpapermod('greencopper.jpg', true, 1.0);">Buugeng</div>
                 <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('colorfade'); wallpapermod('', true, 1.0);">Colorfade</div>
                 <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('rotor'); wallpapermod('', true, 1.0);">Rotor</div>
                 <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('vapor'); wallpapermod('vaporware_sunset_bg.webp', true, 1.0);">Vaporware</div>
@@ -44,9 +43,12 @@
                 <div class="f-h2 t-headline ff-brasspounder mb15">Wallpapers</div><br />
                 <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('', true, 0.0);">None</div>
                 <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('mountains.webp', true, 0.3);">Mountains</div>
-                <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('GreenCopperBG.webp', true, 1.0);">Green Copper</div>
+                <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('greencopper.jpg', true, 1.0);">Green Copper</div>
                 <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('vaporware_sunset_bg.webp', true, 1.0);">Vaporware</div>
                 <!-- wallpapermod('stars_bg1.svg'); -->
+                <div class="mb15"></div>
+                <a href="./rpi.html" class="f-h2 t-headline ff-brasspounder mb15" style="cursor: pointer; text-decoration: none;">RPi</a><br />
+
                 <pre class="f-h5 pricetable" id="fxmenu"></pre>
             </div>
             <div class="menucard glass flex-center">
@@ -106,7 +108,7 @@
         swapfx(selectedfx);
         jsonSelector();
         show('maincontent');
-        // setInterval(jsonSelector, 20000);
+        setInterval(jsonSelector, 20000);
     </script>
     </body>
 </html>
