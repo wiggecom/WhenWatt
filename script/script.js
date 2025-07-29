@@ -135,6 +135,7 @@
         }
     }
 
+    /// Old API
     // Function to fetch and display the data
     async function fetchData(isThisDay) {
         let idtag = '';
@@ -142,14 +143,11 @@
         if (isThisDay){
             idtag = 'today';
             const today = getFormattedDate(); // Today's date
-            // whenwattapi.azurewebsites.net/GetPublic?date=2025-06-04
-            //apiUrl = `https://whenwattapi.azurewebsites.net/GetPublic?date=${today.year}-${today.month}-${today.day}`;
             apiUrl = `https://www.elprisetjustnu.se/api/v1/prices/${today.year}/${today.month}-${today.day}_SE3.json`;
         }
         else {
             idtag = 'tomorrow';
             const tomorrow = getFormattedDate(1); // Tomorrow's date
-            //apiUrl = `https://whenwattapi.azurewebsites.net/GetPublic?date=${tomorrow.year}-${tomorrow.month}-${tomorrow.day}`;
             apiUrl = `https://www.elprisetjustnu.se/api/v1/prices/${tomorrow.year}/${tomorrow.month}-${tomorrow.day}_SE3.json`;
         }
         const d = new Date();
@@ -182,6 +180,77 @@
         else{
             getQuote(idtag);
         }
+    }
+
+
+    /// WIP
+    /*
+    // Function to fetch and display the data
+    async function fetchData(isThisDay) {
+        let idtag = '';
+        let apiUrl = '';
+        if (isThisDay){
+            idtag = 'today';
+            const today = getFormattedDate(); // Today's date
+            // whenwattapi.azurewebsites.net/GetPublic?date=2025-06-04
+            apiUrl = `https://whenwattapi.azurewebsites.net/GetPublic?date=${today.year}-${today.month}-${today.day}`;
+            //apiUrl = `https://www.elprisetjustnu.se/api/v1/prices/${today.year}/${today.month}-${today.day}_SE3.json`;
+        }
+        else {
+            idtag = 'tomorrow';
+            const tomorrow = getFormattedDate(1); // Tomorrow's date
+            apiUrl = `https://whenwattapi.azurewebsites.net/GetPublic?date=${tomorrow.year}-${tomorrow.month}-${tomorrow.day}`;
+            //apiUrl = `https://www.elprisetjustnu.se/api/v1/prices/${tomorrow.year}/${tomorrow.month}-${tomorrow.day}_SE3.json`;
+        }
+        const d = new Date();
+        let thisHour = d.getHours();
+
+        const htmlOut = document.getElementById(idtag);
+        htmlOut.innerHTML = ''; // Reset html
+        if(isThisDay || thisHour >= 14){
+            try {
+                const response = await fetch(apiUrl); // Make the GET request
+                if (!response.ok) {
+                    throw new Error(response.status);
+                }
+                const thisDayArray = await response.json(); // Parse JSON response
+                localStorage.setItem('testObject', JSON.stringify(thisDayArray));
+
+                // Copy everything to clipbard...
+
+                // addObjectToIndexedDb(thisDayArray);
+                // let regionData = getRegionFromIndexedDb('SE3');
+
+                // if(isThisDay){
+                //     setCookie('thisDayCookie', JSON.stringify(regionData), 2);
+                // }
+                // else{
+                //     setCookie('nextDayCookie', JSON.stringify(regionData), 2);
+                // }
+                
+                // writeData(isThisDay, regionData);
+
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                document.getElementById(idtag).textContent = 'Failed to load data: ' + error;
+            }
+        }
+        else{
+            getQuote(idtag);
+        }
+    }
+        */
+
+    function addObjectToIndexedDb(rawJson){
+        const request = window.indexedDB.open("RegionData");
+        request.onerror = (event) => { alert('Could not access Indexed Db'); };
+        request.onsuccess = (event) => {
+            alert('Index Db Accessed');
+        };
+    }
+
+    function getRegionFromIndexedDb(region){
+
     }
 
     function writeDateHeadlines(){
@@ -472,7 +541,7 @@ in Information-panel`;
     }
 
     function createInfoContent(currentPrice, title, kwhused, idtag, fontstyle, fontcolor, dailyAverage){
-        const fontsize = 'f-h7';
+        const fontsize = 'f-costs';
         const cost = currentPrice * kwhused;
         const dailyCost = kwhused * dailyAverage * 24;
         const priceHLStart = '<span class="t-cost">';

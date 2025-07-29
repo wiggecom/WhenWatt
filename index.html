@@ -11,11 +11,10 @@
         <link rel="stylesheet" href="css/fonts.css">
         <link rel="stylesheet" href="css/configs.css">
         <script src="script/script.js"></script>
+        <script src="script/regions.js"></script>
+        <script src="script/parser.js"></script>
         <title>When Watt</title>
     </head>
-    <script>
-        // document.querySelector("meta[name=viewport]").setAttribute('content', 'width=device-width, initial-scale='+(1/window.devicePixelRatio));
-    </script>
 
     <body class="bgblack">
         <div class="bgimage" id="bgimage"></div>
@@ -33,7 +32,7 @@
                 <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('starfield'); wallpapermod('stars_bg1.svg', true, 1.0);">Starfield</div>
                 <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('mountains'); wallpapermod('mountains.webp', true, 0.3);">Mountains</div>
                 <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('circles'); wallpapermod('', true, 1.0);">Circles</div>
-                <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('longspin'); wallpapermod('stars_bg1.svg', true, 0.7);">Spin</div>
+                <!-- <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('longspin'); wallpapermod('stars_bg1.svg', true, 0.7);">Spin</div> -->
                 <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('wave'); wallpapermod('', true, 1.0);">Wave</div>
                 <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('buugeng'); wallpapermod('greencopper.jpg', true, 1.0);">Buugeng</div>
                 <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('colorfade'); wallpapermod('', true, 1.0);">Colorfade</div>
@@ -82,21 +81,21 @@
                 <!-- Today START -->
                     <br />
                 <span class="f-h2 t-neongreen ff-brasspounder" id="todayDate"></span>
-                <pre class="f-h5 pricetable" id="today"></pre>
+                <pre class="f-prices pricetable" id="today"></pre>
             </div>
             <br/>
             <div class="card glass">
                 <!-- Info START -->
                     <br />
                 <span class="f-h2 t-neongreen ff-brasspounder" id="infoTitle">Region: SE3</span>
-                <pre class="f-h5 pricetable" id="info"></pre>
+                <pre class="f-costs pricetable" id="info"></pre>
             </div>
             <br/>
             <div class="card_slim glass">
                 <!-- Tomorrow START -->
                     <br />
                 <span class="f-h2 t-neongreen ff-brasspounder" id="tomorrowDate"></span>
-                <pre class="f-h5 pricetable" id="tomorrow"></pre>
+                <pre class="f-prices pricetable" id="tomorrow"></pre>
             </div>
         </div>
     </div>

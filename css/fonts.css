@@ -265,13 +265,13 @@
 }
 
 .f-h2{
-    font-size: clamp(1rem, -0.875rem + 8.333vw, 2.5rem);
+    font-size: clamp(2vmax, 3.5vmin, 3.5vmin);
     font-weight: 900; 
     /* font-weight sets font from thin to fat, 500 is normal, 0 is thin, 1000 is fat */
 }
 
 .f-h3{
-    font-size: clamp(1em, 2em, 2em);
+    font-size: clamp(2vmax, 2vmin, 3vmin);
     font-weight: 800; 
     /* font-weight sets font from thin to fat, 500 is normal, 0 is thin, 1000 is fat */
 }
@@ -305,10 +305,19 @@
     font-weight: 600;
 }
 
-.f-clock{
-    font-size: clamp(1.2em, 5em, 6em);
+.f-clock {
+    font-size: 8vh;
+    font-weight: 900; 
+}
+
+.f-prices{
+    font-size: 2.2vh;
     font-weight: 1000; 
-    /* font-weight sets font from thin to fat, 500 is normal, 0 is thin, 1000 is fat */
+}
+
+.f-costs{
+    font-size: clamp(1.2vmax, 1.7vmin, 2vmin);
+    font-weight: 1000; 
 }
 
 /*  --  Style -- */

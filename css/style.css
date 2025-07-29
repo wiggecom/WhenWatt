@@ -2,6 +2,12 @@
     border: solid red 1px;
 } */
 
+/* Hide scrollbar in chrome */
+*::-webkit-scrollbar{
+    display: none;
+}
+
+
 *{
     cursor: default;
     user-select: none;
@@ -222,8 +228,8 @@
     position: fixed;
     top: 10px;
     left: 10px;
-    height: 20px;
-    width: 20px;
+    height: 2vw;
+    width: 2vw;
     z-index: 99999;
     padding: 15px;
     animation: menubuttoncolor 5s linear infinite;
