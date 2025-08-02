@@ -11,17 +11,17 @@
         <link rel="stylesheet" href="css/fonts.css">
         <link rel="stylesheet" href="css/configs.css">
         <script src="script/script.js"></script>
-        <script src="script/regions.js"></script>
-        <script src="script/parser.js"></script>
         <title>When Watt</title>
     </head>
+    <script>
+        // document.querySelector("meta[name=viewport]").setAttribute('content', 'width=device-width, initial-scale='+(1/window.devicePixelRatio));
+    </script>
 
     <body class="bgblack">
         <div class="bgimage" id="bgimage"></div>
         <div id="bgfx"></div>
         <!-- Content START -->
         <div class="clock f-clock t-neongreen ff-brasspounder" id="clock"></div>
-        <br/>
         <div class="menubutton" onclick="writeMenu('fxmenu'); writeMenu('configmenu'); writeMenu('displaymenu'); showhide('menucontent'); showhide('maincontent');"></div>
                 <!-- Menu START -->
         <div class="t-center flex-container hider" id="menucontent">
@@ -29,33 +29,31 @@
                 <!-- FX Menu START -->
                 <br />
                 <div class="f-h2 t-headline ff-brasspounder mb15">Themes</div><br />
-                <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('starfield'); wallpapermod('stars_bg1.svg', true, 1.0);">Starfield</div>
-                <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('mountains'); wallpapermod('mountains.webp', true, 0.3);">Mountains</div>
-                <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('circles'); wallpapermod('', true, 1.0);">Circles</div>
+                <div class="f-h5 fxbutton ff-brasspounder" onclick="swapfx('starfield'); wallpapermod('stars_bg1.svg', true, 1.0);">Starfield</div>
+                <!-- <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('starfieldheavy');  wallpapermod('stars_bg1.svg', true, 1.0);">Starfield (heavy)</div> -->
+                <div class="f-h5 fxbutton ff-brasspounder" onclick="swapfx('mountains'); wallpapermod('mountains.webp', true, 0.3);">Mountains</div>
+                <div class="f-h5 fxbutton ff-brasspounder" onclick="swapfx('circles'); wallpapermod('', true, 1.0);">Circles</div>
                 <!-- <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('longspin'); wallpapermod('stars_bg1.svg', true, 0.7);">Spin</div> -->
-                <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('wave'); wallpapermod('', true, 1.0);">Wave</div>
-                <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('buugeng'); wallpapermod('greencopper.jpg', true, 1.0);">Buugeng</div>
-                <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('colorfade'); wallpapermod('', true, 1.0);">Colorfade</div>
-                <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('rotor'); wallpapermod('', true, 1.0);">Rotor</div>
-                <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('vapor'); wallpapermod('vaporware_sunset_bg.webp', true, 1.0);">Vaporware</div>
+                <div class="f-h5 fxbutton ff-brasspounder" onclick="swapfx('wave'); wallpapermod('', true, 1.0);">Wave</div>
+                <div class="f-h5 fxbutton ff-brasspounder" onclick="swapfx('buugeng'); wallpapermod('greencopper.jpg', true, 1.0);">Buugeng</div>
+                <div class="f-h5 fxbutton ff-brasspounder" onclick="swapfx('colorfade'); wallpapermod('', true, 1.0);">Colorfade</div>
+                <div class="f-h5 fxbutton ff-brasspounder" onclick="swapfx('rotor'); wallpapermod('', true, 1.0);">Rotor</div>
+                <div class="f-h5 fxbutton ff-brasspounder" onclick="swapfx('vapor'); wallpapermod('vaporware_sunset_bg.webp', true, 1.0);">Vaporware</div>
                 <div class="mb15"></div>
                 <div class="f-h2 t-headline ff-brasspounder mb15">Wallpapers</div><br />
-                <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('', true, 0.0);">None</div>
-                <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('mountains.webp', true, 0.3);">Mountains</div>
-                <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('greencopper.jpg', true, 1.0);">Green Copper</div>
-                <div class="f-h4 fxbutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('vaporware_sunset_bg.webp', true, 1.0);">Vaporware</div>
+                <div class="f-h5 fxbutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('', true, 0.0);">None</div>
+                <div class="f-h5 fxbutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('mountains.webp', true, 0.3);">Mountains</div>
+                <div class="f-h5 fxbutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('GreenCopperBG.webp', true, 1.0);">Green Copper</div>
+                <div class="f-h5 fxbutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('vaporware_sunset_bg.webp', true, 1.0);">Vaporware</div>
                 <!-- wallpapermod('stars_bg1.svg'); -->
-                <div class="mb15"></div>
-                <a href="./rpi.html" class="f-h2 t-headline ff-brasspounder mb15" style="cursor: pointer; text-decoration: none;">RPi</a><br />
-
                 <pre class="f-h5 pricetable" id="fxmenu"></pre>
             </div>
             <div class="menucard glass flex-center">
                 <!-- Config Menu START -->
                 <br />
                 <div class="f-h2 t-headline ff-brasspounder mb15">Configuration</div><br />
-                <div class="f-h4 fxbutton ff-brasspounder">Location</div>
-                <div class="f-h4 fxbutton ff-brasspounder">Fees</div>
+                <div class="f-h5 fxbutton ff-brasspounder">Location</div>
+                <div class="f-h5 fxbutton ff-brasspounder">Fees</div>
 
                 <pre class="f-h5 pricetable" id="configmenu"></pre>
             </div>
@@ -63,38 +61,37 @@
                 <!-- Display Menu START -->
                 <br />
                 <div class="f-h2 t-headline ff-brasspounder mb15">Display</div><br />
-                <div class="f-h4 fxbutton ff-brasspounder">Heating</div>
-                <div class="f-h4 fxbutton ff-brasspounder">Household</div>
-                <div class="f-h4 fxbutton ff-brasspounder">Personal Care</div>
-                <div class="f-h4 fxbutton ff-brasspounder">Kitchen</div>
-                <div class="f-h4 fxbutton ff-brasspounder">Pizza</div>
-                <div class="f-h4 fxbutton ff-brasspounder">Entertainment</div>
-                <div class="f-h4 fxbutton ff-brasspounder">Misc</div>
-                <div class="f-h4 fxbutton ff-brasspounder">Personal</div>
+                <div class="f-h5 fxbutton ff-brasspounder">Heating</div>
+                <div class="f-h5 fxbutton ff-brasspounder">Household</div>
+                <div class="f-h5 fxbutton ff-brasspounder">Personal Care</div>
+                <div class="f-h5 fxbutton ff-brasspounder">Kitchen</div>
+                <div class="f-h5 fxbutton ff-brasspounder">Pizza</div>
+                <div class="f-h5 fxbutton ff-brasspounder">Entertainment</div>
+                <div class="f-h5 fxbutton ff-brasspounder">Misc</div>
+                <div class="f-h5 fxbutton ff-brasspounder">Personal</div>
 
                 <pre class="f-h5 pricetable" id="displaymenu"></pre>
             </div>
         </div>
         <div class="t-center flex-container hider" id="maincontent">
-            <br/>
             <div class="card_slim glass">
                 <!-- Today START -->
                     <br />
-                <span class="f-h2 t-neongreen ff-brasspounder" id="todayDate"></span>
+                <span class="f-date t-neongreen ff-brasspounder" id="todayDate"></span>
                 <pre class="f-prices pricetable" id="today"></pre>
             </div>
             <br/>
             <div class="card glass">
                 <!-- Info START -->
                     <br />
-                <span class="f-h2 t-neongreen ff-brasspounder" id="infoTitle">Region: SE3</span>
-                <pre class="f-costs pricetable" id="info"></pre>
+                <span class="f-date t-neongreen ff-brasspounder" id="infoTitle">Region: SE3</span>
+                <pre class="f-prices pricetable" id="info"></pre>
             </div>
             <br/>
             <div class="card_slim glass">
                 <!-- Tomorrow START -->
                     <br />
-                <span class="f-h2 t-neongreen ff-brasspounder" id="tomorrowDate"></span>
+                <span class="f-date t-neongreen ff-brasspounder" id="tomorrowDate"></span>
                 <pre class="f-prices pricetable" id="tomorrow"></pre>
             </div>
         </div>

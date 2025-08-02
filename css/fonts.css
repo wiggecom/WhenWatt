@@ -265,7 +265,7 @@
 }
 
 .f-h2{
-    font-size: clamp(2vmax, 3.5vmin, 3.5vmin);
+    font-size: clamp(2vmax, 2.5vmin, 3.5vmin);
     font-weight: 900; 
     /* font-weight sets font from thin to fat, 500 is normal, 0 is thin, 1000 is fat */
 }
@@ -283,7 +283,7 @@
 }
 
 .f-h5{
-    font-size: 1.2em;
+    font-size: clamp(1.2vh, 2.3vh, 2.3vh);
     font-weight: 1000; 
     /* font-weight sets font from thin to fat, 500 is normal, 0 is thin, 1000 is fat */
 }
@@ -316,8 +316,15 @@
 }
 
 .f-costs{
-    font-size: clamp(1.2vmax, 1.7vmin, 2vmin);
+    font-size: clamp(1.2vmax, 2.4vmin, 2.4vmin);
     font-weight: 1000; 
+}
+
+.f-date{
+    font-size: 4vh;
+    font-weight: 900; 
+    margin-top: 1vh;
+    margin-bottom: 2vh;
 }
 
 /*  --  Style -- */

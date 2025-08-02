@@ -15,8 +15,6 @@
     --black: 0, 0, 0;
     --card: 50, 50, 50;
     --menucard: 27, 75, 72;
-    --card_pi_bright: 25, 25, 25;
-    --card_pi_dark: 10, 10, 10;
     --orangeburst: 250, 136, 43;
 
     --great: 100, 255, 100;
@@ -29,6 +27,7 @@
     --fxbuttontext: 21, 212, 200;
     --fxbuttontexthover: 115, 255, 246;
     --fxbuttonbase: 14, 145, 136;
+    --fxbuttonbasehover: 44, 185, 176;
 
     --headline: 115, 255, 246;
 

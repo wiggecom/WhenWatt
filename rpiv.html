@@ -1,0 +1,274 @@
+getCwallpapermod<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
+        <link rel="stylesheet" href="css/style_rpi.css">
+        <link rel="stylesheet" href="css/colors.css">
+        <link rel="stylesheet" href="css/backgrounds.css">
+        <link rel="stylesheet" href="css/fonts.css">
+        <script src="script/script_rpi.js"></script>
+        <script src="script/regions.js"></script>
+        <script src="script/parser.js"></script>
+        <title>When Watt</title>
+    </head>
+    <script>
+        // document.querySelector("meta[name=viewport]").setAttribute('content', 'width=device-width, initial-scale='+(1/window.devicePixelRatio));
+    </script>
+
+    <body class="bgblack">
+        <div class="bgimage" id="bgimage"></div>
+        <div id="bgfx"></div>
+        <!-- Content START -->
+        <!--  Clock  -->
+        <div class="clock ff-brasspounder" id="clock"></div>
+        <!-- Nav Buttons -->
+        <div class="navbuttons" id="buttons">
+            <div class="navbutton ff-devinneswash" onclick="show('todaycard'); hide('tomorrowcard'); hide('infocard'); setCookie('nowpanel', 'nowtoday');">Today</div>
+            <div class="navbutton ff-devinneswash" onclick="hide('todaycard'); show('tomorrowcard'); hide('infocard'); setCookie('nowpanel', 'nowtomorrow');">Tomorrow</div>
+            <div class="navbutton ff-devinneswash" onclick="hide('todaycard'); hide('tomorrowcard'); show('infocard'); setCookie('nowpanel', 'costs');">Costs</div>
+            <div class="navbutton ff-devinneswash" onclick="setcycle()" id="cycle"></div>
+            <div class="navbutton ff-devinneswash" onclick="">Quarter</div>
+            <div class="navbutton ff-devinneswash" onclick="">Hour</div>
+            <div class="navbutton ff-devinneswash" onclick="deleteAllCookies()">Clear</div>
+        </div>
+        <div class="navbuttons" id="menubuttons">
+            <div class="navbutton ff-devinneswash" onclick="show('bgmenu'); hide('cfgmenu'); hide('dspmenu');">Theme</div>
+            <div class="navbutton ff-devinneswash" onclick="hide('bgmenu'); show('cfgmenu'); hide('dspmenu');">Settings</div>
+            <div class="navbutton ff-devinneswash" onclick="hide('bgmenu'); hide('cfgmenu'); show('dspmenu');">Info</div>
+        </div>
+        <!--  MENU BUTTON -->
+          <div class="menubutton" onclick="writeMenu('fxmenu'); writeMenu('configmenu'); writeMenu('displaymenu'); showhide('buttons'); showhide('menubuttons'); showhide('menucontent'); showhide('maincontent');"></div>
+        
+        
+        
+        <!--  MENU  -->
+
+        <div class="t-center flex-container hider" id="menucontent">
+
+            <!-- Theme Menu -->
+            <div class="menucard_wide glass flex-center" id="bgmenu">
+                <br />
+                <div class="f-h2 pi-neongreen ff-brasspounder mb15">Wallpapers</div><br />
+                <div class="pibutton_v ff-brasspounder" onclick="swapfx('none'); wallpapermod('', true, 0.0);">None</div>
+                <div class="pibutton_v ff-brasspounder" onclick="swapfx('none'); wallpapermod('mountains_comp.jpg', true, 1.0);">Mountains</div>
+                <div class="pibutton_v ff-brasspounder" onclick="swapfx('none'); wallpapermod('greencopper.jpg', true, 1.0);">Green Copper</div>
+                <div class="pibutton_v ff-brasspounder" onclick="swapfx('none'); wallpapermod('vaporware.jpg', true, 1.0);">Vaporware</div>
+                <div class="pibutton_v ff-brasspounder" onclick="swapfx('none'); wallpapermod('anemones.jpg', true, 1.0);">Anemones</div>
+                <div class="pibutton_v ff-brasspounder" onclick="swapfx('none'); wallpapermod('blackgreenmarble.jpg', true, 1.0);">Black/Green Marble</div>
+                <div class="pibutton_v ff-brasspounder" onclick="swapfx('none'); wallpapermod('blackmarble.jpg', true, 1.0);">Black Marble</div>
+                <div class="pibutton_v ff-brasspounder" onclick="swapfx('none'); wallpapermod('marble2.jpg', true, 1.0);">Marble</div>
+                <div class="pibutton_v ff-brasspounder" onclick="swapfx('none'); wallpapermod('whitemarble.jpg', true, 1.0);">White Marble</div>
+                <div class="pibutton_v ff-brasspounder" onclick="swapfx('none'); wallpapermod('slateish.jpg', true, 1.0);">Slate</div>
+                <div class="pibutton_v ff-brasspounder" onclick="swapfx('none'); wallpapermod('slateish2.jpg', true, 1.0);">Slate 2</div>
+                <div class="pibutton_v ff-brasspounder" onclick="swapfx('none'); wallpapermod('stonewall1.jpg', true, 1.0);">Stone Wall</div>
+                <div class="pibutton_v ff-brasspounder" onclick="swapfx('none'); wallpapermod('stonewall2.jpg', true, 1.0);">Stone Wall 2</div>
+                <div class="pibutton_v ff-brasspounder" onclick="swapfx('none'); wallpapermod('dahlias.jpg', true, 1.0);">Dahlias</div>
+                <div class="pibutton_v ff-brasspounder" onclick="swapfx('none'); wallpapermod('dahlias_red.jpg', true, 1.0);">Dahlias (Red)</div>
+                <pre class="f-h5 pricetable" id="fxmenu"></pre>
+            </div>
+
+            <!-- Config Menu -->
+            <div class="menucard_wide glass flex-center hider" id="cfgmenu">
+                <!-- Config Menu START -->
+                <br />
+                <div class="f-h2 pi-neongreen ff-brasspounder mb15">Configuration</div><br />
+                <div class=" pibutton_v ff-brasspounder">Location</div>
+                <!-- Country Selector -->
+
+                <div class="dropdowns" id="dropCountry">
+                    <select id="countryDropdown">
+                        <option value="">Select Country</option>
+                    </select>
+                    <select id="regionDropdown" disabled>
+                        <option value="">Select Region</option>
+                    </select>
+                    <select id="currencyDropdown" disabled>
+                        <option value="">Select Currency</option>
+                    </select>
+                </div>
+
+                <div class=" pibutton_v ff-brasspounder">Fees</div>
+
+                <pre class="f-h5 pricetable" id="configmenu"></pre>
+            </div>
+
+            <!-- Display Content Menu -->
+            <div class="menucard_wide glass flex-center hider"  id="dspmenu">
+                <!-- Display Menu START -->
+                <br />
+                <div class="f-h2 pi-neongreen ff-brasspounder mb15">Display</div><br />
+                <div class="pibutton_v ff-brasspounder">Heating</div>
+                <div class="pibutton_v ff-brasspounder">Household</div>
+                <div class="pibutton_v ff-brasspounder">Personal Care</div>
+                <div class="pibutton_v ff-brasspounder">Kitchen</div>
+                <div class="pibutton_v ff-brasspounder">Pizza</div>
+                <div class="pibutton_v ff-brasspounder">Entertainment</div>
+                <div class="pibutton_v ff-brasspounder">Misc</div>
+                <div class="pibutton_v ff-brasspounder">Personal</div>
+
+                <pre class="f-h5 pricetable" id="displaymenu"></pre>
+                
+                <div class="mb15"></div>
+                <a href="./index.html" class="f-h2 pi-neongreen ff-brasspounder mb15" style="cursor: pointer; text-decoration: none;">Main</a><br />
+            </div>
+        </div>
+
+
+        <!-- MAIN CONTENT -->
+        <div class="t-center flex-column hider" id="maincontent">
+
+            <!-- Today -->
+            <div class="card_wide" id="todaycard">
+                <div class="f-h3 themeheader ff-brasspounder">Today</div>
+                <span class="f-h2 themeheader ff-brasspounder" id="todayDate"></span>
+                <pre class="f-h5 pricetable" id="today"></pre>
+            </div>
+
+            <!-- Tomorrow -->
+            <div class="card_wide hider" id="tomorrowcard">
+                <div class="f-h3 themeheader ff-brasspounder">Tomorrow</div>
+                <span class="f-h2 themeheader ff-brasspounder" id="tomorrowDate"></span>
+                <pre class="f-h5 pricetable" id="tomorrow"></pre>
+            </div>
+            
+            <!-- Costs -->
+            <div class="card_wide hider" id="infocard">
+                <!-- Info START -->
+                    <!-- <br /> -->
+                <span class="f-h3 themeheader ff-brasspounder" id="infoTitle">Region: SE3</span>
+                <pre class="f-h5 pricetable" id="info"></pre>
+            </div>
+        </div>
+    </div>
+    <!-- Content END -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        // mywidth();
+        const selectedfx = getCookieByName('selectedfx');
+        const now = getCookieByName('nowpanel');
+        swapfx(selectedfx);
+        jsonSelector();
+        show('buttons');
+        hide('menubuttons');
+        show('maincontent');
+        hide('todaycard')
+        hide('tomorrowcard');
+        hide('infocard');
+        if(now != null && now != 'nowtoday'){
+            if(now == 'nowtomorrow') { show('tomorrowcard'); }
+            else { show('infocard') }
+        }
+        else {show('todaycard');}
+        setInterval(jsonSelector, 20000);
+
+        const countryDropdown = document.getElementById('countryDropdown');
+        const regionDropdown = document.getElementById('regionDropdown');
+        const currencyDropdown = document.getElementById('currencyDropdown');
+        // Populate country dropdown
+        countries.forEach((country, idx) => {
+            const option = document.createElement('option');
+            option.value = idx;
+            option.textContent = country.name;
+            countryDropdown.appendChild(option);
+        });
+
+        countryDropdown.addEventListener('change', function() {
+            regionDropdown.innerHTML = '';
+            currencyDropdown.innerHTML = '';
+            const selectedIdx = this.value;
+            if (selectedIdx === "") {
+                regionDropdown.disabled = true;
+                regionDropdown.innerHTML = '<option value="">Select Region</option>';
+                currencyDropdown.disabled = true;
+                currencyDropdown.innerHTML = '<option value="">Select Currency</option>';
+                return;
+            }
+            const selectedCountry = countries[selectedIdx];
+            selectedCountry.regions.forEach((region, i) => {
+                const option = document.createElement('option');
+                option.value = region.code;
+                option.textContent = region.code;
+                regionDropdown.appendChild(option);
+            });
+            regionDropdown.disabled = false;
+
+            const defaultCurrency = selectedCountry.defaultCurrency;
+            for (var i = 0; i < currencies.length; i++) {
+                var opt = currencies[i];
+                currencyDropdown.innerHTML += "<option value=\"" + opt + "\">" + opt + "</option>";
+            };
+            currencyDropdown.disabled = false;
+
+            // Instantly select the first region if available
+            if (selectedCountry.regions.length > 0) {
+                regionDropdown.selectedIndex = 0;
+            }
+
+            if (selectedCountry.defaultCurrency.length > 0) {
+                // Usage after country selection:
+                selectDefaultCurrency(currencyDropdown, selectedCountry.defaultCurrency);
+                //currencyDropdown.selectedIndex = 0;
+            }
+            localStorage.setItem('selectedCountry', selectedCountry.name);
+            localStorage.setItem('selectedRegion', selectedCountry.regions[0].code);
+            localStorage.setItem('selectedCurrency', selectedCountry.defaultCurrency);
+        });
+        
+
+        // Region Select
+        regionDropdown.addEventListener('change', function() {
+            const selectedRegion = this.value;
+            localStorage.setItem('selectedRegion', selectedRegion);
+        });
+
+        // Currency Select
+        currencyDropdown.addEventListener('change', function() {
+            const selectedCurrency = this.value;
+            localStorage.setItem('selectedCurrency', selectedCurrency);
+        });
+
+        // Set the currency dropdown to the country's default currency
+        function selectDefaultCurrency(currencyDropdown, defaultCurrency) {
+            for (let i = 0; i < currencyDropdown.options.length; i++) {
+                if (currencyDropdown.options[i].value === defaultCurrency) {
+                    currencyDropdown.selectedIndex = i;
+                    return;
+                }
+            }
+            // Optionally, set to first if not found
+            currencyDropdown.selectedIndex = 2;
+        }
+
+        
+
+    </script>
+    </body>
+</html>

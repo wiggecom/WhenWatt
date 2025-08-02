@@ -127,7 +127,7 @@
             jsonData.forEach(element => {
                 sekKwh = element.SEK_per_kWh;
                 timeStart = element.time_start;
-                generatehtml(idtag, isThisDay, sekKwh, timeStart, dailyAverage);
+                generateHtml(idtag, isThisDay, sekKwh, timeStart, dailyAverage);
             });
         }
         else{
@@ -274,16 +274,19 @@
         const menu = document.getElementById(id);
         if (id == 'fxmenu'){
             message = `
-Some themes are very demanding, 
-your mileage may vary`;
+Some themes are very 
+demanding, your 
+mileage may vary`;
         }
         
         else if (id == 'configmenu'){
             message = `
 Coming soon!
-Settings for your personal
-fees that gets added on top
-of the spot price.`;
+Settings for region, 
+currency, tax and your 
+personal fees that gets 
+added on top of the 
+spot price.`;
         }
 
         else if (id == 'displaymenu'){
@@ -342,7 +345,7 @@ in Information-panel`;
         document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/" + ";SameSite=Strict";
     }
 
-    function generatehtml(idtag, isThisDay, _sekKwh, _timeStart, dailyAverage){
+    function generateHtml(idtag, isThisDay, _sekKwh, _timeStart, dailyAverage){
         const fontstyle = 'ff-avignon-bi';
         const htmlOut = document.getElementById(idtag);
         let fontcolor = '';
@@ -452,9 +455,9 @@ in Information-panel`;
             ['Ironing', 2, 60]
             ];
         const miscArray = [
-            ['LED bulb', 0.015, 60], 
-            ['LED bulb', 0.0075, 60], 
-            ['Electriframe', 0.001, 60] 
+            ['LED bulb 15w', 0.015, 60], 
+            ['LED bulb 7.5w', 0.0075, 60], 
+            ['WhenWatt', 0.003, 60] 
             ];
 
         const information = document.getElementById('info');
@@ -656,16 +659,16 @@ in Information-panel`;
             'interference_one',
             'interference_two'
         ],
-        longspin: [
-            'longspin_f',
-            'longspin_f_loop',
-            'longspin_f2',
-            'longspin_f2_loop',
-            'longspin_b',
-            'longspin_b_loop',
-            'longspin_b2',
-            'longspin_b2_loop'
-        ],
+        // longspin: [
+        //     'longspin_f',
+        //     'longspin_f_loop',
+        //     'longspin_f2',
+        //     'longspin_f2_loop',
+        //     'longspin_b',
+        //     'longspin_b_loop',
+        //     'longspin_b2',
+        //     'longspin_b2_loop'
+        // ],
         wave: [
             'floating-base',
             'floating-bg',

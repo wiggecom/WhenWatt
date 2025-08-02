@@ -10,17 +10,16 @@ getCwallpapermod<!DOCTYPE html>
         <link rel="stylesheet" href="css/backgrounds.css">
         <link rel="stylesheet" href="css/fonts.css">
         <script src="script/script_rpi.js"></script>
+        <script src="script/regions.js"></script>
+        <script src="script/parser.js"></script>
         <title>When Watt</title>
     </head>
-    <script>
-        // document.querySelector("meta[name=viewport]").setAttribute('content', 'width=device-width, initial-scale='+(1/window.devicePixelRatio));
-    </script>
 
     <body class="bgblack">
         <div class="bgimage" id="bgimage"></div>
         <div id="bgfx"></div>
         <!-- Content START -->
-        <div class="clock f-clock pi-neongreen ff-brasspounder" id="clock"></div>
+        <div class="clock themeclock ff-brasspounder" id="clock"></div>
         <br/>
         <div class="menubutton" onclick="writeMenu('fxmenu'); writeMenu('configmenu'); writeMenu('displaymenu'); showhide('menucontent'); showhide('maincontent');"></div>
                 <!-- Menu START -->
@@ -40,9 +39,9 @@ getCwallpapermod<!DOCTYPE html>
                 <div class="f-h4 pibutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('vaporware.jpg', true, 1.0);">Vaporware</div>
                 <div class="f-h4 pibutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('anemones.jpg', true, 1.0);">Anemones</div>
                 <div class="f-h4 pibutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('blackgreenmarble.jpg', true, 1.0);">Black/Green Marble</div>
-                <div class="f-h4 pibutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('blackmarble.jpg', true, 1.0);">Black Marble</div>
+                <!-- <div class="f-h4 pibutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('blackmarble.jpg', true, 1.0);">Black Marble</div> -->
                 <div class="f-h4 pibutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('marble2.jpg', true, 1.0);">Marble</div>
-                <div class="f-h4 pibutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('whitemarble.jpg', true, 1.0);">White Marble</div>
+                <!-- <div class="f-h4 pibutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('whitemarble.jpg', true, 1.0);">White Marble</div> -->
                 <div class="f-h4 pibutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('slateish.jpg', true, 1.0);">Slate</div>
                 <div class="f-h4 pibutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('slateish2.jpg', true, 1.0);">Slate 2</div>
                 <div class="f-h4 pibutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('stonewall1.jpg', true, 1.0);">Stone Wall</div>

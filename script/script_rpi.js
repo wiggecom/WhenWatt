@@ -6,6 +6,49 @@
         yesterday.setDate(yesterday.getDate() -1);
         let cookieDate;
         let thisHour = today.getHours();
+        let thisUTCHour = today.getUTCHours();
+
+        // Cycle
+        var cyclestate = getCookieByName('cyclestate');
+        if(cyclestate == 'cycle'){
+            if(thisUTCHour >= 12){
+                var nowpanel = getCookieByName('nowpanel');
+                if(nowpanel == 'nowtoday'){
+                    //show tomorrow, hide today, write nowtoday
+                    hide('todaycard');
+                    show('tomorrowcard');
+                    setCookie('nowpanel', 'nowtomorrow');
+                }
+                else if(nowpanel == 'costs'){
+
+                }
+                else{
+                    //show today, hide tomorrow, write nowtomorrow
+                    hide('tomorrowcard');
+                    show('todaycard');
+                    setCookie('nowpanel', 'nowtoday');
+                }
+            }
+            else{
+                hide('tomorrowcard');
+                show('todaycard');
+                setCookie('nowpanel', 'nowtoday');
+            }
+        }
+        else{
+            setCookie('cyclestate', 'static');
+        }
+
+        // Cycle Button
+        var cyclebutton = document.getElementById('cycle');
+        if(cyclestate == 'cycle'){
+            // write Stop to cycle
+                    cyclebutton.textContent = `Stop Cycle`;
+        }
+        else{
+            // write cycle to cycle
+            cyclebutton.textContent = `Cycle`;
+        }
 
         const thisDayData = getCookieByName('thisDayCookie');
         let thisDayArray;
@@ -232,7 +275,7 @@ in Information-panel`;
     function getQuote(idtag){
         const fontstyle = 'ff-brasspounder';
         const fontsize = 'f-h3';
-        const fontcolor = 'pi-neongreen';
+        const fontcolor = 'themeheader';
         const qfontstyle = 'ff-pristina';
         const qfontsize = 'f-h2';
         const qfontcolor = 'pi-lemony';
@@ -458,7 +501,7 @@ in Information-panel`;
 
     function createInfoHeadline(title, idtag, fontstyle, headlinecolor){
         //const fontstyle = 'ff-pristina';
-        const fontsize = 'f-h3';
+        const fontsize = 'f-h5';
         const fontcolor = headlinecolor;
         const information = document.getElementById(idtag);
 
@@ -546,9 +589,9 @@ in Information-panel`;
         let wallpaper_opacity_value = '';
         let fxname = fxname_in;
         const fxId = document.getElementById('bgfx');
-        if (fxname == null || fxname == ''){
-            fxname = 'starfield';
-            wallpapermod('stars_bg1.svg', true, 1.0);
+        if (fxname == null || fxname == '' || fxname == 'starfield'){
+            fxname = 'none';
+            wallpapermod('dahlias_red.jpg', true, 1.0);
         }
         setCookie('selectedfx', fxname, 90);
         wallpapermod('', false);
@@ -669,3 +712,35 @@ in Information-panel`;
             showfx(id);
         }
     }
+
+    function setcycle() {
+        var cyclestate = getCookieByName('cyclestate');
+        if (cyclestate != null){
+            if(cyclestate == 'cycle'){
+                cyclestate = 'static'
+            }
+            else if (cyclestate == 'static'){
+                cyclestate = 'cycle'
+            }
+        setCookie('cyclestate', cyclestate);
+        }
+
+        var cyclebutton = document.getElementById('cycle');
+        if(cyclestate == 'cycle'){
+            // write Stop to cycle
+            cyclebutton.textContent = `Stop`;
+        }
+        else{
+            // write cycle to cycle
+            cyclebutton.textContent = `Cycle`;
+        }
+    }
+
+
+    function deleteAllCookies() {
+    document.cookie.split(';').forEach(cookie => {
+        const eqPos = cookie.indexOf('=');
+        const name = eqPos > -1 ? cookie.substring(0, eqPos) : cookie;
+        document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT';
+    });
+}

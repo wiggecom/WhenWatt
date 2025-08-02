@@ -521,7 +521,7 @@
 }
 
 /* ---------------- SunnyMountains Background ----------------- */
-.bg-trees_base {
+/* .bg-trees_base {
     display: block;
     background-image: url(../images/bgimg/mountains.webp);
     background-position: center center;
@@ -534,7 +534,7 @@
     width: 100%;
     opacity: 0.3;
     z-index: 20;
-}
+} */
 
 .bg-trees_sun {
     display: block;
@@ -682,7 +682,7 @@
     mask-position: center center;
     mask-repeat: no-repeat;
     mask-origin: initial;
-    background-position-y: -200%;
+    background-position-y: 200%;
     background-position-x: 0%;
     background-repeat: no-repeat;
     background-size:cover;
@@ -692,7 +692,7 @@
     height: 100%;
     width: 100%;
     animation-name: vaporgrid;
-    animation-duration: 13.4s;
+    animation-duration: 18.4s;
     animation-iteration-count: infinite;
     animation-direction: normal;
     transition-timing-function: linear;
@@ -701,16 +701,15 @@
 
     @keyframes vaporgrid{
         0% {
-            background-position-y:-100vh;
-            opacity: 0.0;
+            background-position-y: -50vh;
+            opacity: 100%;
         }
-        85% {
+        80%{
             background-position-y: 100vh;
-            opacity: 1.0;
         }
         100% {
             background-position-y: 100vh;
-            opacity: 0.0;
+            opacity: 0%;
         }
     }
 
@@ -742,5 +741,5 @@
 }
 
 .glass{
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px) !important;
 }

@@ -1,6 +1,14 @@
- /* *{
+/*
+ *{
     border: solid red 1px;
-} */
+} 
+*/
+
+body, html, * {
+    margin:0;
+    padding:0
+} 
+
 
 /* Hide scrollbar in chrome */
 *::-webkit-scrollbar{
@@ -72,6 +80,8 @@
     opacity: 1;
 }
 
+
+
 .flex-container{
     display: flex;
     justify-content: start;
@@ -92,8 +102,8 @@
     white-space: initial;
     margin: auto;
     padding: 10px;
-    margin-top: 0px;
-    margin-bottom: 20px;
+    margin-top: 3vh;
+    margin-bottom: 0vh;
     z-index: 30;
     resize:none;
     -ms-overflow-style: none;
@@ -106,8 +116,8 @@
 
 .card, .card_slim{
     background-image: linear-gradient(170deg, 
-    rgba(var(--card),0.4) clamp(25%, 120px, 120px), 
-    rgba(var(--card),0.2) clamp(25%, 120px, 120px), 
+    rgba(var(--card),0.4) clamp(15%, 120px, 120px), 
+    rgba(var(--card),0.2) clamp(15%, 120px, 120px), 
     rgba(var(--card),0.3) clamp(75%, calc(100% - 120px), calc(100% - 120px)), 
     rgba(var(--card),0.5) clamp(75%, calc(100% - 120px), calc(100% - 120px)));
     border: solid 4px rgba(0,0,0,0.4);
@@ -133,18 +143,20 @@
 
 .menucard {
     background-image: linear-gradient(170deg, 
-    rgba(var(--menucard),0.6) clamp(25%, 120px, 120px), 
-    rgba(0,0,0,0.6) clamp(25%, 120px, 120px), 
-    rgba(var(--menucard),0.3) clamp(30%, 120px, 120px), 
-    rgba(var(--menucard),0.4) clamp(75%, calc(100% - 120px), calc(100% - 120px)), 
-    rgba(var(--menucard),0.7) clamp(75%, calc(100% - 120px), calc(100% - 120px)));
+    rgba(var(--menucard),0.7) clamp(15%, 120px, 120px), 
+    rgba(var(--menucard),0.4) clamp(15%, 120px, 120px), 
+    rgba(var(--menucard),0.4) clamp(80%, calc(100% - 120px), calc(100% - 120px)), 
+    rgba(var(--menucard),0.7) clamp(80%, calc(100% - 120px), calc(100% - 120px)));
     border: solid 4px rgba(0,0,0,0.4);
     box-shadow: rgba(0,0,0,0.8) 3px 15px 15px;
-    width: clamp(400px, 40%, 30%);
-    max-height: 75vh;
-    min-height: 75vh;
+    width: clamp(300px, 27vw, 27vw);
+    /* min-width: 300px; */
+    max-height: 90vh;
+    min-height: 90vh;
     padding-left: 10px;
     padding-right: 10px;
+    margin-left: 2vw;
+    margin-right: 2vw;
     overflow-x: hidden;
     overflow-y: scroll;
     word-break: break-word !important;
@@ -164,16 +176,21 @@
       }
 }
   
-  /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
   @media screen and (max-width: 600px) {
     .menucard, .card, .card_slim{
       width: 70% !important;
     }
   }
 
+
+  /* CLOCK */
+  /* CLOCK */
+  /* CLOCK */
+  /* CLOCK */
+
 .clock{
     position: absolute;
-    bottom: 50px;
+    bottom: 5vh;
     left: 0;
     right: 0;
     width: fit-content;
@@ -226,10 +243,10 @@
     background-position: center center;
     background-repeat: no-repeat;
     position: fixed;
-    top: 10px;
+    top: 5px;
     left: 10px;
-    height: 2vw;
-    width: 2vw;
+    height: 2vh;
+    width: 2vh;
     z-index: 99999;
     padding: 15px;
     animation: menubuttoncolor 5s linear infinite;
