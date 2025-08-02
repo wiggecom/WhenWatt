@@ -6,6 +6,49 @@
         yesterday.setDate(yesterday.getDate() -1);
         let cookieDate;
         let thisHour = today.getHours();
+        let thisUTCHour = today.getUTCHours();
+
+        // Cycle
+        var cyclestate = getCookieByName('cyclestate');
+        if(cyclestate == 'cycle'){
+            if(thisUTCHour >= 12){
+                var nowpanel = getCookieByName('nowpanel');
+                if(nowpanel == 'nowtoday'){
+                    //show tomorrow, hide today, write nowtoday
+                    hide('todaycard');
+                    show('tomorrowcard');
+                    setCookie('nowpanel', 'nowtomorrow');
+                }
+                else if(nowpanel == 'costs'){
+
+                }
+                else{
+                    //show today, hide tomorrow, write nowtomorrow
+                    hide('tomorrowcard');
+                    show('todaycard');
+                    setCookie('nowpanel', 'nowtoday');
+                }
+            }
+            else{
+                hide('tomorrowcard');
+                show('todaycard');
+                setCookie('nowpanel', 'nowtoday');
+            }
+        }
+        else{
+            setCookie('cyclestate', 'static');
+        }
+
+        // Cycle Button
+        var cyclebutton = document.getElementById('cycle');
+        if(cyclestate == 'cycle'){
+            // write Stop to cycle
+                    cyclebutton.textContent = `Stop Cycle`;
+        }
+        else{
+            // write cycle to cycle
+            cyclebutton.textContent = `Cycle`;
+        }
 
         const thisDayData = getCookieByName('thisDayCookie');
         let thisDayArray;
@@ -127,7 +170,7 @@
             jsonData.forEach(element => {
                 sekKwh = element.SEK_per_kWh;
                 timeStart = element.time_start;
-                generateHtml(idtag, isThisDay, sekKwh, timeStart, dailyAverage);
+                generatehtml(idtag, isThisDay, sekKwh, timeStart, dailyAverage);
             });
         }
         else{
@@ -135,7 +178,6 @@
         }
     }
 
-    /// Old API
     // Function to fetch and display the data
     async function fetchData(isThisDay) {
         let idtag = '';
@@ -143,11 +185,14 @@
         if (isThisDay){
             idtag = 'today';
             const today = getFormattedDate(); // Today's date
+            // whenwattapi.azurewebsites.net/GetPublic?date=2025-06-04
+            //apiUrl = `https://whenwattapi.azurewebsites.net/GetPublic?date=${today.year}-${today.month}-${today.day}`;
             apiUrl = `https://www.elprisetjustnu.se/api/v1/prices/${today.year}/${today.month}-${today.day}_SE3.json`;
         }
         else {
             idtag = 'tomorrow';
             const tomorrow = getFormattedDate(1); // Tomorrow's date
+            //apiUrl = `https://whenwattapi.azurewebsites.net/GetPublic?date=${tomorrow.year}-${tomorrow.month}-${tomorrow.day}`;
             apiUrl = `https://www.elprisetjustnu.se/api/v1/prices/${tomorrow.year}/${tomorrow.month}-${tomorrow.day}_SE3.json`;
         }
         const d = new Date();
@@ -182,77 +227,6 @@
         }
     }
 
-
-    /// WIP
-    /*
-    // Function to fetch and display the data
-    async function fetchData(isThisDay) {
-        let idtag = '';
-        let apiUrl = '';
-        if (isThisDay){
-            idtag = 'today';
-            const today = getFormattedDate(); // Today's date
-            // whenwattapi.azurewebsites.net/GetPublic?date=2025-06-04
-            apiUrl = `https://whenwattapi.azurewebsites.net/GetPublic?date=${today.year}-${today.month}-${today.day}`;
-            //apiUrl = `https://www.elprisetjustnu.se/api/v1/prices/${today.year}/${today.month}-${today.day}_SE3.json`;
-        }
-        else {
-            idtag = 'tomorrow';
-            const tomorrow = getFormattedDate(1); // Tomorrow's date
-            apiUrl = `https://whenwattapi.azurewebsites.net/GetPublic?date=${tomorrow.year}-${tomorrow.month}-${tomorrow.day}`;
-            //apiUrl = `https://www.elprisetjustnu.se/api/v1/prices/${tomorrow.year}/${tomorrow.month}-${tomorrow.day}_SE3.json`;
-        }
-        const d = new Date();
-        let thisHour = d.getHours();
-
-        const htmlOut = document.getElementById(idtag);
-        htmlOut.innerHTML = ''; // Reset html
-        if(isThisDay || thisHour >= 14){
-            try {
-                const response = await fetch(apiUrl); // Make the GET request
-                if (!response.ok) {
-                    throw new Error(response.status);
-                }
-                const thisDayArray = await response.json(); // Parse JSON response
-                localStorage.setItem('testObject', JSON.stringify(thisDayArray));
-
-                // Copy everything to clipbard...
-
-                // addObjectToIndexedDb(thisDayArray);
-                // let regionData = getRegionFromIndexedDb('SE3');
-
-                // if(isThisDay){
-                //     setCookie('thisDayCookie', JSON.stringify(regionData), 2);
-                // }
-                // else{
-                //     setCookie('nextDayCookie', JSON.stringify(regionData), 2);
-                // }
-                
-                // writeData(isThisDay, regionData);
-
-            } catch (error) {
-                console.error('Error fetching data:', error);
-                document.getElementById(idtag).textContent = 'Failed to load data: ' + error;
-            }
-        }
-        else{
-            getQuote(idtag);
-        }
-    }
-        */
-
-    function addObjectToIndexedDb(rawJson){
-        const request = window.indexedDB.open("RegionData");
-        request.onerror = (event) => { alert('Could not access Indexed Db'); };
-        request.onsuccess = (event) => {
-            alert('Index Db Accessed');
-        };
-    }
-
-    function getRegionFromIndexedDb(region){
-
-    }
-
     function writeDateHeadlines(){
         const today = getFormattedDate(); // Today's date
         const tomorrow = getFormattedDate(1); // Today's date
@@ -268,25 +242,20 @@
     function writeMenu(id){
         const fontstyle = 'ff-pristina';
         const fontsize = 'f-h4';
-        const fontcolor = 't-lemony';
+        const fontcolor = 'pi-lemony';
         let message = ``;
 
         const menu = document.getElementById(id);
         if (id == 'fxmenu'){
-            message = `
-Some themes are very 
-demanding, your 
-mileage may vary`;
+            message = ``;
         }
         
         else if (id == 'configmenu'){
             message = `
 Coming soon!
-Settings for region, 
-currency, tax and your 
-personal fees that gets 
-added on top of the 
-spot price.`;
+Settings for your personal
+fees that gets added on top
+of the spot price.`;
         }
 
         else if (id == 'displaymenu'){
@@ -306,13 +275,13 @@ in Information-panel`;
     function getQuote(idtag){
         const fontstyle = 'ff-brasspounder';
         const fontsize = 'f-h3';
-        const fontcolor = 't-neongreen';
+        const fontcolor = 'themeheader';
         const qfontstyle = 'ff-pristina';
         const qfontsize = 'f-h2';
-        const qfontcolor = 't-lemony';
+        const qfontcolor = 'pi-lemony';
         const i = "<i><br/>";
         const ie = "</i>";
-        const authStart = '<span class="t-goldy"><br/>';
+        const authStart = '<span class="pi-goldy"><br/>';
         const authEnd = '</span>';
         const quotes = [
             `${i}\"You have come a long way to find, what you really left behind\"${ie} ${authStart} - Megadeth${authEnd}`, // 0
@@ -345,28 +314,28 @@ in Information-panel`;
         document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/" + ";SameSite=Strict";
     }
 
-    function generateHtml(idtag, isThisDay, _sekKwh, _timeStart, dailyAverage){
+    function generatehtml(idtag, isThisDay, _sekKwh, _timeStart, dailyAverage){
         const fontstyle = 'ff-avignon-bi';
         const htmlOut = document.getElementById(idtag);
         let fontcolor = '';
         const sekFloat = parseFloat(_sekKwh).toFixed(3);
         if (sekFloat <= 0.3){
-            fontcolor = 't-great'
+            fontcolor = 'pi-great'
         }
         else if (sekFloat > 0.3 && sekFloat <= 0.6){
-            fontcolor = 't-good'
+            fontcolor = 'pi-good'
         }
         else if (sekFloat > 0.6 && sekFloat <= 1.0){
-            fontcolor = 't-ok'
+            fontcolor = 'pi-ok'
         }
         else if (sekFloat > 1.0 && sekFloat <= 1.8){
-            fontcolor = 't-caution'
+            fontcolor = 'pi-caution'
         }
         else if (sekFloat > 1.8 && sekFloat <= 2.5){
-            fontcolor = 't-warning'
+            fontcolor = 'pi-warning'
         }
         else if (sekFloat > 2.5){
-            fontcolor = 't-warning_2'
+            fontcolor = 'pi-warning_2'
         }
 
         const reald = new Date();
@@ -393,8 +362,8 @@ in Information-panel`;
     function writeInfo(currentPrice, fontstyle, dailyAverage){
         const headlinefont = 'ff-devinneswash';
         const fontsize = 'f-h3';
-        const headlinecolor = 't-ok';
-        const fontcolor = 't-orangeburst';
+        const headlinecolor = 'pi-ok';
+        const fontcolor = 'pi-orangeburst';
         const kWm = currentPrice / 60;
         const sectionCare = true;
         const sectionHeating = true;
@@ -455,9 +424,9 @@ in Information-panel`;
             ['Ironing', 2, 60]
             ];
         const miscArray = [
-            ['LED bulb 15w', 0.015, 60], 
-            ['LED bulb 7.5w', 0.0075, 60], 
-            ['WhenWatt', 0.003, 60] 
+            ['LED bulb', 0.015, 60], 
+            ['LED bulb', 0.0075, 60], 
+            ['Electriframe', 0.001, 60] 
             ];
 
         const information = document.getElementById('info');
@@ -532,7 +501,7 @@ in Information-panel`;
 
     function createInfoHeadline(title, idtag, fontstyle, headlinecolor){
         //const fontstyle = 'ff-pristina';
-        const fontsize = 'f-h3';
+        const fontsize = 'f-h5';
         const fontcolor = headlinecolor;
         const information = document.getElementById(idtag);
 
@@ -544,10 +513,10 @@ in Information-panel`;
     }
 
     function createInfoContent(currentPrice, title, kwhused, idtag, fontstyle, fontcolor, dailyAverage){
-        const fontsize = 'f-costs';
+        const fontsize = 'f-h7';
         const cost = currentPrice * kwhused;
         const dailyCost = kwhused * dailyAverage * 24;
-        const priceHLStart = '<span class="t-cost">';
+        const priceHLStart = '<span class="pi-cost">';
         const priceHLEnd = '</span>';
         let priceInfo  = ''; 
         if(title.includes('24h')){
@@ -616,11 +585,13 @@ in Information-panel`;
 
     function swapfx(fxname_in){
         const divId = 'bgfx';
+        let wallpaperCookie = '';
+        let wallpaper_opacity_value = '';
         let fxname = fxname_in;
         const fxId = document.getElementById('bgfx');
-        if (fxname == null || fxname == ''){
-            fxname = 'starfield';
-            wallpapermod('stars_bg1.svg', true, 1.0);
+        if (fxname == null || fxname == '' || fxname == 'starfield'){
+            fxname = 'none';
+            wallpapermod('dahlias_red.jpg', true, 1.0);
         }
         setCookie('selectedfx', fxname, 90);
         wallpapermod('', false);
@@ -659,16 +630,16 @@ in Information-panel`;
             'interference_one',
             'interference_two'
         ],
-        // longspin: [
-        //     'longspin_f',
-        //     'longspin_f_loop',
-        //     'longspin_f2',
-        //     'longspin_f2_loop',
-        //     'longspin_b',
-        //     'longspin_b_loop',
-        //     'longspin_b2',
-        //     'longspin_b2_loop'
-        // ],
+        longspin: [
+            'longspin_f',
+            'longspin_f_loop',
+            'longspin_f2',
+            'longspin_f2_loop',
+            'longspin_b',
+            'longspin_b_loop',
+            'longspin_b2',
+            'longspin_b2_loop'
+        ],
         wave: [
             'floating-base',
             'floating-bg',
@@ -678,7 +649,7 @@ in Information-panel`;
             'wave_3'
         ],
         buugeng: [
-            // 'imagebg',
+            'imagebg',
             'buugeng_1',
             'buugeng_2'
         ],
@@ -706,8 +677,10 @@ in Information-panel`;
                 createDiv(item, divId);
             })
         };
-        const wallpaperCookie = getCookieByName('wallpaper');
-        const wallpaper_opacity_value = parseFloat(getCookieByName('wallpaper_opacity'));
+
+        wallpaperCookie = getCookieByName('wallpaper');
+        wallpaper_opacity_value = parseFloat(getCookieByName('wallpaper_opacity'));
+
         wallpapermod(wallpaperCookie, false, wallpaper_opacity_value);
     }
 
@@ -739,3 +712,35 @@ in Information-panel`;
             showfx(id);
         }
     }
+
+    function setcycle() {
+        var cyclestate = getCookieByName('cyclestate');
+        if (cyclestate != null){
+            if(cyclestate == 'cycle'){
+                cyclestate = 'static'
+            }
+            else if (cyclestate == 'static'){
+                cyclestate = 'cycle'
+            }
+        setCookie('cyclestate', cyclestate);
+        }
+
+        var cyclebutton = document.getElementById('cycle');
+        if(cyclestate == 'cycle'){
+            // write Stop to cycle
+            cyclebutton.textContent = `Stop`;
+        }
+        else{
+            // write cycle to cycle
+            cyclebutton.textContent = `Cycle`;
+        }
+    }
+
+
+    function deleteAllCookies() {
+    document.cookie.split(';').forEach(cookie => {
+        const eqPos = cookie.indexOf('=');
+        const name = eqPos > -1 ? cookie.substring(0, eqPos) : cookie;
+        document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT';
+    });
+}

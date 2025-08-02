@@ -104,7 +104,7 @@
 
 .pattern {
     display: block;
-    background-image: url(../images/pattern4.svg);
+    background-image: url(../images/bgfx/pattern4.svg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -157,20 +157,20 @@
 }
 
 /* .stars-bg-base{
-    background-image: url(../images/stars_bg1.svg);
+    background-image: url(../images/bgfx/stars_bg1.svg);
     opacity: 0.7;
     z-index: 1;
 } */
 
 .stars-bg-fade1{
-    background-image: url(../images/stars_bg2.svg);
+    background-image: url(../images/bgfx/stars_bg2.svg);
     -webkit-animation-duration: calc(var(--stars_fade1) * 1s);
     animation-duration: calc(var(--stars_fade1) * 1s);
     z-index: 22;
 }
 
 .stars-bg-fade2{
-    background-image: url(../images/stars_bg3.svg);
+    background-image: url(../images/bgfx/stars_bg3.svg);
     -webkit-animation-duration: calc(var(--stars_fade2) * 1s);
     animation-duration: calc(var(--stars_fade2) * 1s);
     z-index: 23;
@@ -209,7 +209,7 @@
 }
 
 .stars_near {
-    background-image: url(../images/stars_near.svg);
+    background-image: url(../images/bgfx/stars_near.svg);
     -webkit-animation-duration: calc(var(--stars_near) * 1s);
     -webkit-animation-delay: calc(var(--stars_near) * -0.5 * 1s);
     animation-duration: calc(var(--stars_near) * 1s);
@@ -217,14 +217,14 @@
 }
 
 .stars_near_loop {
-    background-image: url(../images/stars_near.svg);
+    background-image: url(../images/bgfx/stars_near.svg);
     -webkit-animation-duration: calc(var(--stars_near) * 1s);
     animation-duration: calc(var(--stars_near) * 1s);
 }
 
 .stars_far {
     opacity: 0.4;
-    background-image: url(../images/stars_far.svg);
+    background-image: url(../images/bgfx/stars_far.svg);
     -webkit-animation-duration: calc(var(--stars_far) * 1s);
     -webkit-animation-delay: calc(var(--stars_far) * -0.5 * 1s);
     animation-duration: calc(var(--stars_far) * 1s);
@@ -233,14 +233,14 @@
 
 .stars_far_loop {
     opacity: 0.4;
-    background-image: url(../images/stars_far.svg);
+    background-image: url(../images/bgfx/stars_far.svg);
     -webkit-animation-duration: calc(var(--stars_far) * 1s);
     animation-duration: calc(var(--stars_far) * 1s);
 }
 
 .stars_whereveryouare {
     opacity: 0.7;
-    background-image: url(../images/stars_mid.svg);
+    background-image: url(../images/bgfx/stars_mid.svg);
     -webkit-animation-duration: calc(var(--stars_mid) * 1s);
     -webkit-animation-delay: calc(var(--stars_mid) * -0.5 * 1s);
     animation-duration: calc(var(--stars_mid) * 1s);
@@ -249,7 +249,7 @@
 
 .stars_whereveryouare_loop {
     opacity: 0.7;
-    background-image: url(../images/stars_mid.svg);
+    background-image: url(../images/bgfx/stars_mid.svg);
     -webkit-animation-duration: calc(var(--stars_mid) * 1s);
     animation-duration: calc(var(--stars_mid) * 1s);
 }
@@ -288,7 +288,7 @@
 }
 
 .longspin_f, .longspin_f_loop, .longspin_f2, .longspin_f2_loop {
-    background-image: url(../images/spin_long_front.svg);
+    background-image: url(../images/bgfx/spin_long_front.svg);
     -webkit-animation-duration: calc(var(--spin_speedy) * 1s);
     animation-duration: calc(var(--spin_speedy) * 1s);
     z-index: 110000;
@@ -310,7 +310,7 @@
 }
 
 .longspin_b, .longspin_b_loop, .longspin_b2, .longspin_b2_loop {
-    background-image: url(../images/spin_long_back.svg);
+    background-image: url(../images/bgfx/spin_long_back.svg);
     -webkit-animation-duration: calc(var(--spin_speedy) * 1s);
     animation-duration: calc(var(--spin_speedy) * 1s);
     z-index: 5;
@@ -344,7 +344,7 @@
 /*  -------------- BUUGENG START --------------- */
 .imagebg{
     display: block;
-    background-image: url('../images/GreenCopperBG.webp');
+    background-image: url('../images/bgimg/greencopper.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size:cover;
@@ -358,7 +358,7 @@
 
 .buugeng_1 {
     display: block;
-    background-image: url(../images/buugeng.svg);
+    background-image: url(../images/bgfx/buugeng.svg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size:contain;
@@ -392,7 +392,7 @@
 
 .buugeng_2 {
     display: block;
-    background-image: url(../images/buugeng.svg);
+    background-image: url(../images/bgfx/buugeng.svg);
     background-position: center center;
     background-repeat:no-repeat;
     background-size:contain;
@@ -422,7 +422,7 @@
 
 /*  -------------- INTERFERENCE START --------------- */
 .interference_one {
-    background-image: url(../images/megacircle2.svg);
+    background-image: url(../images/bgfx/megacircle2.svg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -456,7 +456,7 @@
 }
 
 .interference_two {
-    background-image: url(../images/megacircle2.svg);
+    background-image: url(../images/bgfx/megacircle2.svg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -504,24 +504,26 @@
 }
 
 .wave_1 {
-    background-image: url(../images/wavex3_1.svg);
+    background-image: url(../images/bgfx/wavex3_1.svg);
     z-index: 21;
 }
 
 .wave_2 {
-    background-image: url(../images/wavex3_2.svg);
+    background-image: url(../images/bgfx/wavex3_2.svg);
+    background-position-y: 50px;
     z-index: 22;
 }
 
 .wave_3 {
-    background-image: url(../images/wavex3_3.svg);
+    background-image: url(../images/bgfx/wavex3_3.svg);
+    background-position-y: 100px;
     z-index: 23;
 }
 
 /* ---------------- SunnyMountains Background ----------------- */
-.bg-trees_base {
+/* .bg-trees_base {
     display: block;
-    background-image: url(../images/mountains.webp);
+    background-image: url(../images/bgimg/mountains.webp);
     background-position: center center;
     background-repeat: no-repeat;
     background-size:cover;
@@ -532,11 +534,11 @@
     width: 100%;
     opacity: 0.3;
     z-index: 20;
-}
+} */
 
 .bg-trees_sun {
     display: block;
-    background-image: url(../images/trees_sun_v3.svg);
+    background-image: url(../images/bgfx/trees_sun_v3.svg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size:cover;
@@ -579,7 +581,7 @@
 
 .bg-trees_left {
     display: block;
-    background-image: url(../images/trees_left.svg);
+    background-image: url(../images/bgfx/trees_left.svg);
     background-position: left center;
     background-repeat: no-repeat;
     background-size: auto 100%;
@@ -594,7 +596,7 @@
 
 .bg-trees_right {
     display: block;
-    background-image: url(../images/trees_right.svg);
+    background-image: url(../images/bgfx/trees_right.svg);
     background-position: right center;
     background-repeat: no-repeat;
     background-size: auto 100%;
@@ -627,7 +629,7 @@
 /* ------------------ Vaporware ------------------ */
 .vaporware_sun {
     display: block;
-    background-image: url(../images/vaporware_sunfx.svg);
+    background-image: url(../images/bgfx/vaporware_sunfx.svg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size:cover;
@@ -674,13 +676,13 @@
 
 .vaporware_grid {
     display: block;
-    background-image: url(../images/vaporware_gridbar.svg);
-    mask-image: url(../images/vaporware_sunset_lines_mask.webp);
+    background-image: url(../images/bgfx/vaporware_gridbar.svg);
+    mask-image: url(../images/bgfx/vaporware_sunset_lines_mask.webp);
     mask-size: cover;
     mask-position: center center;
     mask-repeat: no-repeat;
     mask-origin: initial;
-    background-position-y: -200%;
+    background-position-y: 200%;
     background-position-x: 0%;
     background-repeat: no-repeat;
     background-size:cover;
@@ -699,18 +701,14 @@
 
     @keyframes vaporgrid{
         0% {
-            background-position-y: 200%;
-            opacity: 0%;
-        }
-        50% {
-            background-position-y: 400%;
+            background-position-y: -50vh;
             opacity: 100%;
         }
         80%{
-            opacity: 100%;
+            background-position-y: 100vh;
         }
         100% {
-            background-position-y: -400%;
+            background-position-y: 100vh;
             opacity: 0%;
         }
     }
@@ -743,5 +741,5 @@
 }
 
 .glass{
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px) !important;
 }

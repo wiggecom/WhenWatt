@@ -1,0 +1,601 @@
+ /* *{
+    border: solid red 1px;
+} */
+
+:root{
+    --widecard: 56vw;
+    --themebuttons: 255,255,200;
+    --themebuttonshover: 255,170,170;
+    --themeheaders: 255,170,170;
+    --themetextshadow: 150,50,50;
+
+    --themedroptext: 128, 255, 64;
+
+    --themecardbg: 60,60,60;
+    --themecardcut: 20,20,20;
+}
+
+/* Hide scrollbar in chrome */
+*::-webkit-scrollbar{
+    display: none;
+}
+
+*{
+    cursor: default;
+    user-select: none;
+}
+
+.rpiglass{
+    backdrop-filter: blur(20px) !important;
+}
+
+.glass{
+    backdrop-filter: blur(8px) !important;
+}
+
+.glass_heavy{
+    backdrop-filter: blur(12px) !important;
+}
+
+/*  FONTS  */
+.pi-gld {
+    color: rgb(var(--goldycolor)) !important;
+    text-shadow: rgba(0,0,0,0.7) 7px 3px 7px !important;
+}
+
+
+/*  -- Plot Colors--  */
+.pi-great {
+    color: rgb(var(--great)) !important;
+    /* text-shadow: rgba(0,0,0,0.7) 7px 3px 7px !important; */
+}
+
+.pi-good {
+    color: rgb(var(--good)) !important;
+    /* text-shadow: rgba(0,0,0,0.7) 7px 3px 7px !important; */
+}
+
+.pi-ok {
+    color: rgb(var(--ok)) !important;
+    /* text-shadow: rgba(0,0,0,0.7) 7px 3px 7px !important; */
+}
+
+.pi-caution {
+    color: rgb(var(--caution)) !important;
+    /* text-shadow: rgba(0,0,0,0.7) 7px 3px 7px !important; */
+}
+
+.pi-warning {
+    color: rgb(var(--warning)) !important;
+    /* text-shadow: rgba(0,0,0,0.7) 7px 3px 7px !important; */
+}
+
+.pi-warning_2 {
+    color: rgb(var(--warning)) !important;
+    /* text-shadow:rgba(0,0,0,0.7) 7px 3px 7px !important; */
+    border: 2px solid rgba(var(--warning),0.8);
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+/*  --  Colors -- */
+.pi-headline {
+    color: rgba(0,0,0,0) !important;
+    -webkit-text-stroke-color: rgba(var(--headline),0.7) !important;
+    -webkit-text-stroke-width: 2px !important;
+    /* text-shadow: rgba(var(--headline),0.5) 0px 0px 25px, rgba(var(--headline),0.8) 0px 0px 20px !important; */
+}
+
+.pi-goldy {
+    color: rgba(var(--goldycolor),1) !important; 
+    /* text-shadow: rgba(105, 30, 0, 1.0) 0px 0px 15px !important;  */
+}
+
+.pi-cost {
+    color: rgba(var(--cost),1) !important;
+    /* text-shadow: rgba(0,0,0,0.9) 5px 5px 5px !important; */
+}
+
+.pi-lemony {
+    color: rgba(var(--lemonyellow),1) !important;
+    /* text-shadow: rgba(202, 108, 0, 0.9) 0px 0px 25px !important; */
+}
+
+.pi-orangeburst {
+    color: rgba(var(--orangeburst),1) !important;
+    /* text-shadow: rgba(0,0,0,0.9) 5px 5px 5px !important; */
+}
+
+.pi-pinky {
+    color: rgba(var(--bubblegumpink),1) !important;
+    /* text-shadow: rgba(255,128,192,0.9) 0px 0px 25px !important; */
+}
+
+.pi-darkxmas {
+    color: rgba(var(--darkxmas),1) !important;
+    /* text-shadow: rgba(255,128,192,0.9) 0px 0px 25px !important; */
+}
+
+.pi-neonpink {
+    color: rgb(var(--hotpink)) !important;
+    -webkit-text-stroke-color: rgba(255,255,255,0.2) !important;
+    -webkit-text-stroke-width: 3px !important;
+    /* text-shadow: rgba(255,128,192,1) 0px 0px 35px, rgba(255,128,192,1) 0px 0px 20px, rgba(255,160,215,1) 0px 0px 10px !important; */
+}
+
+.pi-neontubepink {
+    color: rgba(0,0,0,0) !important;
+    -webkit-text-stroke-color: rgba(255,200,215,0.7) !important;
+    -webkit-text-stroke-width: 2px !important;
+    /* text-shadow: rgba(255,128,192,1) 0px 0px 25px, rgba(255,128,192,1) 0px 0px 15px, rgba(255,160,215,1) 0px 0px 10px !important; */
+}
+
+.pi-neontubeblue {
+    color: rgba(0,0,0,0) !important;
+    -webkit-text-stroke-color: rgba(200,200,255,0.7) !important;
+    -webkit-text-stroke-width: 2px !important;
+    /* text-shadow: rgba(100,100,255,1) 0px 0px 25px, rgba(100,100,255,1) 0px 0px 15px, rgba(100,100,255,1) 0px 0px 10px !important; */
+}
+
+.pi-neongreen {
+    color: rgb(200,255,200) !important;
+    /* text-shadow: rgba(31,200,95,1) 0px 0px 25px, rgba(31,200,95,1) 0px 0px 15px, rgba(100,250,100,1) 0px 0px 10px !important; */
+}
+
+.themeheader {
+    color: rgb(var(--themeheaders)) !important;
+    text-shadow: rgba(0,0,0,1) 5px 5px 15px,  rgba(0,0,0,1) 5px 5px 5px !important;
+}
+
+.themeclock {
+    color: rgb(var(--themeclock)) !important;
+    /* text-shadow: rgba(31,200,95,1) 0px 0px 25px, rgba(31,200,95,1) 0px 0px 15px, rgba(100,250,100,1) 0px 0px 10px !important; */
+}
+
+.pi-neonyellow {
+    color: rgb(255,255,200) !important;
+    /* text-shadow: rgba(200,200,100,1) 0px 0px 25px, rgba(200,200,100,1) 0px 0px 15px, rgba(250,250,100,1) 0px 0px 10px !important; */
+}
+/*  Positioning  */
+.scrollinside{
+    overflow:scroll;
+}
+
+.noscroll {
+    overflow:clip;
+}
+
+.max80 {
+    max-height: calc( 100vh - 120px );
+    min-height: calc( 100vh - 120px );
+}
+
+.max100{
+    max-height:100%;
+}
+
+.maxw90{
+    max-width: 90vw !important;
+}
+
+.index100{
+    z-index: 100;
+}
+
+.pop{
+    z-index: 100;
+}
+
+.opaque{
+    opacity: 1.0;
+}
+
+.mb15{
+    margin-bottom: 15px;
+}
+
+.contentwrap{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 30%;
+    height: 100%;
+    z-index: 999;
+    overflow-y: scroll;
+    display: block;
+}
+
+.contentwrap-flex{
+    position: relative;
+    width: 30%;
+    height: 100%;
+    z-index: 999;
+    overflow-y: scroll;
+    display: block;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: space-between;
+    z-index: 900;
+}
+
+.flex-column{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: space-between;
+    z-index: 900;
+    margin: 0 auto;
+    width: var(--widecard);
+}
+
+.flex-center{
+    margin-top: auto;
+}
+
+
+
+
+
+
+
+/* ***** CARDS ***** */
+/* ***** CARDS ***** */
+/* ***** CARDS ***** */
+
+
+
+
+
+
+.card, .card_slim, .menucard .card_wide {
+    display: flex;
+    flex-direction: column;
+    white-space: initial;
+    margin: auto;
+    padding: 0px;
+    /* padding-top: 20px; */
+    margin-top: 0px;
+    /* margin-bottom: 10px; */
+    z-index: 30;
+    resize:none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow: auto;
+    overflow-x: clip;
+    overflow-y: scroll;
+    /* overflow-clip-margin: -20px; */
+}
+.card::-webkit-scrollbar, .card_slim::-webkit-scrollbar, .menucard::-webkit-scrollbar {
+    display: none;
+}
+
+.card, .card_slim, .card_wide {
+    /* background-image: linear-gradient(90deg, 
+    rgba(var(--themecardcut), 0.3) 0%, 
+    rgba(var(--themecardbg), 0.8) 40%, 
+    rgba(var(--themecardbg), 0.8) 50%, 
+    rgba(var(--themecardbg), 0.8) 60%, 
+    rgba(var(--themecardcut), 0.3) 100%); */
+    background: rgba(var(--themecardbg), 0.5);
+    outline: solid 4px rgba(0,10,0, 0.4);
+    box-shadow: black 8px 12px 15px;
+    overflow-x: hidden;
+}
+
+.card{
+    width: clamp(400px, 40%, 30%);
+    max-height: 75vh;
+    min-height: 75vh;
+    flex-direction: column;
+}
+
+.card_slim{
+    width: clamp(300px, 30%, 20%);
+    max-height: 90vh;
+    min-height: 90vh;
+}
+
+.card_wide{
+    width: var(--widecard);
+    max-height: 90vh;
+    min-height: 90vh;
+    flex-direction: column;
+    margin: 2vh auto;
+    padding-top: 20px;
+    backdrop-filter: blur(6px) grayscale(80%);
+    -webkit-backdrop-filter: blur(6px) grayscale(80%);
+    overflow: hidden;
+}
+
+.font-card{
+    width: clamp(250px, 45%, 45%) !important;
+}
+
+.menucard {
+    background-image: linear-gradient(170deg, 
+    rgb(var(--menucard)) clamp(25%, 120px, 120px), 
+    rgb(0,0,0) clamp(25%, 120px, 120px), 
+    rgb(var(--menucard)) clamp(30%, 120px, 120px), 
+    rgb(var(--menucard)) clamp(75%, calc(100% - 120px), calc(100% - 120px)), 
+    rgb(var(--menucard)) clamp(75%, calc(100% - 120px), calc(100% - 120px)));
+    outline: solid 4px rgb(0,10,0);
+    box-shadow: rgba(0,0,0,0.8) 3px 15px 15px;
+    width: clamp(400px, 40%, 30%);
+    max-height: 75vh;
+    min-height: 75vh;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    word-break: break-word !important;
+}
+
+.menucard_wide {
+    background-image: linear-gradient(170deg, 
+    rgb(var(--menucard)) clamp(25%, 120px, 120px), 
+    rgb(0,0,0) clamp(25%, 120px, 120px), 
+    rgb(var(--menucard)) clamp(30%, 120px, 120px), 
+    rgb(var(--menucard)) clamp(75%, calc(100% - 120px), calc(100% - 120px)), 
+    rgb(var(--menucard)) clamp(75%, calc(100% - 120px), calc(100% - 120px)));
+    outline: solid 4px rgb(0,10,0);
+    box-shadow: rgba(0,0,0,0.8) 3px 15px 15px;
+    width: var(--widecard);
+    max-height: 90vh;
+    min-height: 90vh;
+    flex-direction: column;
+    margin: 2vh auto;
+    padding-top: 1vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    word-break: break-word !important;
+}
+
+.cardinfo{
+    text-align: center;
+}
+
+.padcontent{
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.padcontent::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+}
+
+
+/*  Button-bars in menu */
+
+.pibutton{
+    color: rgb(var(--fxbuttontext));
+    background-color: rgb(var(--fxbuttonbase));
+    /* backdrop-filter:blur(5px); */
+    /* border: 3px solid rgba(0,0,0,0.4); */
+    width: 60%;
+    align-self: center;
+    padding: 5px;
+    /* transform: scale(1.00); */
+    /* transition-duration: 0.6s;   */
+    z-index: 10000;
+}
+.pibutton:hover, .pibutton:target, .pibutton::selection{
+    color: rgb(var(--fxbuttontexthover));
+    background-color: rgb(var(--fxbuttonbasehover));
+    box-shadow: rgb(0,0,0) 0px 5px;
+    text-shadow: rgb(0,0,0) 3px 5px !important;
+    outline: 2px solid black;
+    /* backdrop-filter:blur(0px); */
+    transform: scale(1.1);
+    cursor: pointer;
+    z-index: 10100;
+}
+
+/*  Button-bars in menu for single panel */
+
+.pibutton_v{
+    color: rgb(var(--fxbuttontext));
+    background-color: rgb(var(--fxbuttonbase));
+    width: 100%;
+    align-self: center;
+    padding: 5px;
+    z-index: 10000;
+    font-size: 3vh;
+    border-bottom: 2px solid black;
+}
+.pibutton_v:hover, .pibutton_v:target, .pibutton_v::selection{
+    color: rgb(var(--fxbuttontexthover));
+    background-color: rgb(var(--fxbuttonbasehover));
+    box-shadow: rgb(0,0,0) 0px 5px;
+    text-shadow: rgb(0,0,0) 3px 5px !important;
+    outline: 2px solid black;
+    transform: scale(1.1);
+    cursor: pointer;
+    z-index: 10100;
+}
+
+
+.display-block{
+    display: block;
+}
+
+@media screen and (max-width: 992px) {
+    .menucard, .card , .card_slim{
+        width: 45% !important;
+      }
+}
+  
+  /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .menucard, .card, .card_slim{
+      width: 70% !important;
+    }
+  }
+
+
+  /*
+    *******     **          *******     *******     **   **
+    *******     **          *******     *******     **  **
+    **          **          **   **     **          ** **
+    **          **          **   **     **          ****
+    **          **          **   **     **          ** **
+    *******     *******     *******     *******     **  **
+    *******     *******     *******     *******     **   **
+  */
+
+.clock{
+    position: fixed;
+    bottom:1vw;
+    right: 1vw;
+    color: rgb(var(--themebuttons));
+    width: fit-content;
+    height: fit-content;
+    z-index: 1974;
+    margin-inline: auto;
+    display: block;
+    -webkit-text-stroke: 1px black;
+    text-shadow: black 0px 10px 10px, black 0px 10px 5px;
+    font-size: 10vw;
+    font-weight: 1000; 
+}
+
+
+/* @media screen and (max-width: 700px) {
+    .clock {
+      display: none !important;
+      visibility: hidden;
+      position: relative;
+    }
+  } */
+
+.hider {
+    display: none;
+    /* visibility: hidden; */
+    position: relative;
+}
+
+.polygon {
+    background-color: chartreuse;
+    width: 200px; /* adjust to control the size */
+    aspect-ratio: 1;
+    clip-path: polygon(55% 10%,10% 100%,0% 100%,50% 0%); /* */
+  }
+
+  .polygon:hover {
+    background-color:coral;
+  }
+
+  .menubutton{
+    background-color: white; /* fallback color */
+    /* background: linear-gradient(135deg, rgb(100,100,255) 0%, rgb(255,255,96) 100%); */
+    background: rgb(var(--themebuttons));
+    background-size: 200% 200%;
+    background-position: 50% 50%;
+    mask-image: url(../images/menu_w.svg);
+    mask-size:70%;
+    mask-repeat: no-repeat;
+    mask-position: center center;
+    display: block;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 2vh;
+    width: 2vh;
+    z-index: 99999;
+    padding: 15px;
+    margin-bottom: 3vh;
+    cursor: pointer !important;
+  }
+  .menubutton:hover{
+    background: rgb(100,255,100);
+  }
+  
+.hourlybutton{
+    font-size: 2.2vh;
+    transform: scale(1.00);
+    z-index: 10000;
+    text-shadow: rgba(0,0,0,0.9) 5px 5px 15px, rgba(0,0,0,0.7) 5px 5px 5px;
+}
+.hourlybutton:hover, .hourlybutton:target, .hourlybutton::selection{
+    transform: scale(1.4);
+    z-index: 10100;
+}
+
+.infozoom{
+    transform: scale(1.00);
+    z-index: 500000;
+}
+.infozoom:hover, .infozoom:target, .infozoom::selection{
+    transform: scale(1.2, 2.6);
+    color: white;
+    cursor: default;
+    z-index: 10100;
+}
+
+.navbuttons{
+    position: fixed;
+    flex-direction: column;
+    left: 0px;
+    top: 6vh;
+    height: 20vh;
+    width: 15vw;
+    z-index: 999;
+}
+
+.navbutton{
+    /* width: fit-content; */
+    min-height: 6vh;
+    min-width: 18vw;
+    line-height: 5vh;
+    font-size: 1.8vh;
+    font-weight: 1000;
+    
+    padding-left: 20px;
+    /* background-color: rgba(30,30,30,0.3); */
+    /* backdrop-filter: blur(5px) saturate(250%) brightness(50%); */
+    /* padding: 5px; */
+    border-radius: 10px;
+    color: rgb(var(--themebuttons));
+    cursor: pointer;
+    
+    margin: 0px;
+    text-shadow: black 0px 0px 20px, rgb(var(--themetextshadow)) 0px 10px 10px, rgb(var(--themetextshadow)) 0px 5px 5px, rgb(var(--themetextshadow)) 0px -5px 10px;
+    /* -webkit-text-stroke: 1px black; */
+}
+
+.navbutton:hover{
+    color: rgb(var(--themebuttonshover));
+    /* background-color: rgb(60,60,60); */
+}
+
+.dropdowns{
+    margin: 10 20 30 20;
+    max-height: 60vh;
+}
+
+.dropdowns select{
+    background-color: rgba(0,0,0,0.6);
+    border: none;
+    outline: none;
+    color: rgb(var(--themedroptext));
+    font-size: 1.35rem;
+    font-weight: 1000;
+    padding: 10px;
+    max-height: 60vh;
+    opacity: 0.7;
+    text-shadow: rgba(100,255,100, 0.8) 0px 0px 10px;
+}

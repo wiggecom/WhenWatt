@@ -1,0 +1,116 @@
+getCwallpapermod<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
+        <link rel="stylesheet" href="css/style_rpi.css">
+        <link rel="stylesheet" href="css/colors.css">
+        <link rel="stylesheet" href="css/backgrounds.css">
+        <link rel="stylesheet" href="css/fonts.css">
+        <script src="script/script_rpi.js"></script>
+        <script src="script/regions.js"></script>
+        <script src="script/parser.js"></script>
+        <title>When Watt</title>
+    </head>
+
+    <body class="bgblack">
+        <div class="bgimage" id="bgimage"></div>
+        <div id="bgfx"></div>
+        <!-- Content START -->
+        <div class="clock themeclock ff-brasspounder" id="clock"></div>
+        <br/>
+        <div class="menubutton" onclick="writeMenu('fxmenu'); writeMenu('configmenu'); writeMenu('displaymenu'); showhide('menucontent'); showhide('maincontent');"></div>
+                <!-- Menu START -->
+        <div class="t-center flex-container hider" id="menucontent">
+            <div class="menucard rpiglass flex-center">
+                <!-- FX Menu START -->
+                <br />
+                <div class="f-h2 pi-neongreen ff-brasspounder mb15">Themes</div><br />
+                <div class="f-h4 pibutton ff-brasspounder">Coming Soon</div>
+                <div class="mb15"></div>
+                <!-- RPI is too weak for fx -->
+                <div class="mb15"></div>
+                <div class="f-h2 pi-neongreen ff-brasspounder mb15">Wallpapers</div><br />
+                <div class="f-h4 pibutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('', true, 0.0);">None</div>
+                <div class="f-h4 pibutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('mountains_comp.jpg', true, 1.0);">Mountains</div>
+                <div class="f-h4 pibutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('greencopper.jpg', true, 1.0);">Green Copper</div>
+                <div class="f-h4 pibutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('vaporware.jpg', true, 1.0);">Vaporware</div>
+                <div class="f-h4 pibutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('anemones.jpg', true, 1.0);">Anemones</div>
+                <div class="f-h4 pibutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('blackgreenmarble.jpg', true, 1.0);">Black/Green Marble</div>
+                <!-- <div class="f-h4 pibutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('blackmarble.jpg', true, 1.0);">Black Marble</div> -->
+                <div class="f-h4 pibutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('marble2.jpg', true, 1.0);">Marble</div>
+                <!-- <div class="f-h4 pibutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('whitemarble.jpg', true, 1.0);">White Marble</div> -->
+                <div class="f-h4 pibutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('slateish.jpg', true, 1.0);">Slate</div>
+                <div class="f-h4 pibutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('slateish2.jpg', true, 1.0);">Slate 2</div>
+                <div class="f-h4 pibutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('stonewall1.jpg', true, 1.0);">Stone Wall</div>
+                <div class="f-h4 pibutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('stonewall2.jpg', true, 1.0);">Stone Wall 2</div>
+                <div class="f-h4 pibutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('dahlias.jpg', true, 1.0);">Dahlias</div>
+                <div class="f-h4 pibutton ff-brasspounder" onclick="swapfx('none'); wallpapermod('dahlias_red.jpg', true, 1.0);">Dahlias (Red)</div>
+
+                <pre class="f-h5 pricetable" id="fxmenu"></pre>
+            </div>
+            <div class="menucard rpiglass flex-center">
+                <!-- Config Menu START -->
+                <br />
+                <div class="f-h2 pi-neongreen ff-brasspounder mb15">Configuration</div><br />
+                <div class="f-h4 pibutton ff-brasspounder">Location</div>
+                <div class="f-h4 pibutton ff-brasspounder">Fees</div>
+
+                <pre class="f-h5 pricetable" id="configmenu"></pre>
+            </div>
+            <div class="menucard rpiglass flex-center">
+                <!-- Display Menu START -->
+                <br />
+                <div class="f-h2 pi-neongreen ff-brasspounder mb15">Display</div><br />
+                <div class="f-h4 pibutton ff-brasspounder">Heating</div>
+                <div class="f-h4 pibutton ff-brasspounder">Household</div>
+                <div class="f-h4 pibutton ff-brasspounder">Personal Care</div>
+                <div class="f-h4 pibutton ff-brasspounder">Kitchen</div>
+                <div class="f-h4 pibutton ff-brasspounder">Pizza</div>
+                <div class="f-h4 pibutton ff-brasspounder">Entertainment</div>
+                <div class="f-h4 pibutton ff-brasspounder">Misc</div>
+                <div class="f-h4 pibutton ff-brasspounder">Personal</div>
+
+                <pre class="f-h5 pricetable" id="displaymenu"></pre>
+                
+                <div class="mb15"></div>
+                <a href="./index.html" class="f-h2 pi-neongreen ff-brasspounder mb15" style="cursor: pointer; text-decoration: none;">Main</a><br />
+            </div>
+        </div>
+        <div class="t-center flex-container hider" id="maincontent">
+            <div class="card_slim rpiglass">
+                <!-- Today START -->
+                    <br />
+                <span class="f-h2 pi-neongreen ff-brasspounder" id="todayDate"></span>
+                <pre class="f-h5 pricetable padcontent" id="today"></pre>
+            </div>
+            <br/>
+            <div class="card rpiglass">
+                <!-- Info START -->
+                    <br />
+                <span class="f-h2 pi-neongreen ff-brasspounder" id="infoTitle">Region: SE3</span>
+                <pre class="f-h5 pricetable padcontent" id="info"></pre>
+            </div>
+            <br/>
+            <div class="card_slim rpiglass">
+                <!-- Tomorrow START -->
+                    <br />
+                <span class="f-h2 pi-neongreen ff-brasspounder" id="tomorrowDate"></span>
+                <pre class="f-h5 pricetable padcontent" id="tomorrow"></pre>
+            </div>
+        </div>
+    </div>
+    <!-- Content END -->
+
+    <script>
+        // mywidth();
+        const selectedfx = getCookieByName('selectedfx');
+        swapfx(selectedfx);
+        jsonSelector();
+        show('maincontent');
+        setInterval(jsonSelector, 20000);
+    </script>
+    </body>
+</html>
