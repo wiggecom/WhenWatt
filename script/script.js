@@ -118,7 +118,7 @@
             jsonData.forEach(item =>{
                 dailyAverage = dailyAverage + item.SEK_per_kWh;
             });
-            dailyAverage = dailyAverage / 24;
+            dailyAverage = dailyAverage / 96;
         
             // Reset html
             const htmlOut = document.getElementById(idtag);
