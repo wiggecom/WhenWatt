@@ -47,7 +47,7 @@
         }
         else{
             // write cycle to cycle
-            cyclebutton.textContent = `Cycle`;
+            cyclebutton.textContent = `Start Cycle`;
         }
 
         const thisDayData = getCookieByName('thisDayCookie');
@@ -161,7 +161,7 @@
             jsonData.forEach(item =>{
                 dailyAverage = dailyAverage + item.SEK_per_kWh;
             });
-            dailyAverage = dailyAverage / 24;
+            dailyAverage = dailyAverage / 96;
         
             // Reset html
             const htmlOut = document.getElementById(idtag);
