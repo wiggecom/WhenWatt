@@ -104,7 +104,9 @@
         swapfx(selectedfx);
         jsonSelector();
         show('maincontent');
-        setInterval(jsonSelector, 20000);
+        writeClock();
+        setInterval(jsonSelector, 300000);
+        setInterval(writeClock, 5000);
     </script>
     </body>
 </html>
