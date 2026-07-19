@@ -258,10 +258,19 @@
         const tomorrow = getFormattedDate(1); // Today's date
         const todayText = today.year + '-' + today.month + '-' + today.day;
         const tomorrowText = tomorrow.year + '-' + tomorrow.month + '-' + tomorrow.day;
-        const clockText = today.hour + ':' + today.minute;
+        // const clockText = today.hour + ':' + today.minute;
 
         document.getElementById('todayDate').innerHTML = todayText;
         document.getElementById('tomorrowDate').innerHTML = tomorrowText;
+        // document.getElementById('clock').innerHTML = clockText;
+    }
+
+    function writeClock(){
+        const timeNow = new Date();
+        const hour = String(timeNow.getHours()).padStart(2, '0');
+        const minute = String(timeNow.getMinutes()).padStart(2, '0');
+        //const second = String(timeNow.getSeconds()).padStart(2, '0');
+        const clockText = hour + ":" + minute;
         document.getElementById('clock').innerHTML = clockText;
     }
 
